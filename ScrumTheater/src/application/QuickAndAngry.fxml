@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+   <children>
+      <Text layoutX="190.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Quick and the Angry">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="124.0" layoutY="91.0" prefHeight="218.0" prefWidth="351.0" text="What do you get when rubber meets pavement? Burnouts! &#10;Get ready to put the pedal to the metal, and live life a &#10;quarter mile at a time. You can be quick, you can be angry, &#10;but not everyone can be both. Would you put your life one&#10;the line for the thrill? Or play it safe behind the wheel? &#10;Will speed take over, or will the love of FAMILY keep you safe?&#10;&#10;&#10;Runtime: 150 minutes" />
+   </children>
+</AnchorPane>
