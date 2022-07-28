@@ -1,20 +1,73 @@
 package application;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class sceneController 
+public class sceneController implements Initializable
 {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+
+	@FXML
+	public ListView<String> catalogListView = new ListView<>();
+
+
+	// Initialization //
+
+	@Override
+	public void initialize(URL url, ResourceBundle resourceBundle)
+	{
+
+		try {
+			catalogListView.getItems().addAll(getMovieList());
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+
+
+		/*
+
+		@Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        listView.getItems().addAll(items);
+
+        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>(){
+
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                currentItem = listView.getSelectionModel().getSelectedItem();
+
+                myLabel.setText(currentItem);
+            }
+        });
+    }
+
+		*/
+	}
+
+
+	// Event Methods //
 
 	/**
 	 * When the title is clicked, opens the home page.
@@ -111,4 +164,28 @@ public class sceneController
 		stage.setScene(scene);
 		stage.show();
 	}
+
+
+	// Helper Methods //
+
+
+	private List<String> getMovieList() throws IOException {
+		List<String> movieList = new ArrayList<String>();
+
+		File movNamesFile = new File("ScrumTheater/bin/resources/text/movieNames");
+		FileInputStream is = new FileInputStream(movNamesFile);
+		Scanner sc = new Scanner(is);
+
+		while (sc.hasNextLine())
+		{
+			movieList.add(sc.nextLine());
+		}
+
+		sc.close();
+
+		Collections.sort(movieList);
+
+		return movieList;
+	}
+
 }

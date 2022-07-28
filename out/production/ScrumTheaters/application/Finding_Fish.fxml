@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+   <children>
+      <Text layoutX="240.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finding Fish" wrappingWidth="118.13665771484375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="133.0" layoutY="97.0" prefHeight="206.0" prefWidth="333.0" text="When Marvin loses his son Memo after being kidnapped&#10;by humans, he sets out on a journey to find his son with&#10;the help of Lory, a fish he meets along the way. However,&#10;during the journey, he realizes his son is not the only&#10;fish that he has to find.&#10;&#10;&#10;Runtime: 90 minutes" />
+   </children>
+</AnchorPane>
