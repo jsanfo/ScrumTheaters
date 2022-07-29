@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="235.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Neptunian">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="103.0" layoutY="74.0" prefHeight="213.0" prefWidth="394.0" text="When astronauts blast off from the planet Neptune, they leave behind&#10;Marco Witey, presumed dead after a fierce storm. With only a meager&#10;amount of supplies, the stranded visitor must utilize his wits and spirit&#10;to find a way to survive on the hostile planet. Meanwhile, back on&#10;Earth, members of NASA and a team of international scientists work&#10;tirelessly to bring him home, while his crew mates hatch their own&#10;plan for a daring rescue mission. Will he be able to make it back home?&#10;&#10;Runtime: 147 minutes" />
+   </children>
+</AnchorPane>
