@@ -31,9 +31,10 @@
             <Insets bottom="10.0" />
          </padding>
       </Label>
-      <TextField fx:id="userEmailField" layoutX="233.0" layoutY="188.0" prefHeight="25.0" prefWidth="135.0" promptText="username or email" />
+      <TextField fx:id="userField" layoutX="233.0" layoutY="188.0" prefHeight="25.0" prefWidth="135.0" promptText="username" />
       <PasswordField fx:id="passwordField" layoutX="233.0" layoutY="226.0" prefHeight="25.0" prefWidth="135.0" promptText="password" />
-      <Button fx:id="loginButton" layoutX="251.0" layoutY="263.0" mnemonicParsing="false" onAction="#homeClicked" prefHeight="25.0" prefWidth="100.0" text="Log In" />
+      <Button fx:id="loginButton" layoutX="251.0" layoutY="263.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="25.0" prefWidth="100.0" text="Log In" />
       <Button fx:id="createAccountButton" layoutX="251.0" layoutY="295.0" mnemonicParsing="false" onAction="#createAccClicked" prefHeight="25.0" prefWidth="100.0" text="Create Account" />
+      <Label fx:id="errorLbl" alignment="CENTER" contentDisplay="CENTER" layoutY="153.0" prefHeight="31.0" prefWidth="600.0" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>
