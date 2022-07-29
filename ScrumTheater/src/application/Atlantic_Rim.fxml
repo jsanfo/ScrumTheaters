@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <Text layoutX="244.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atlantic Rim">
+      <ImageView fitHeight="366.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../OneDrive/Pictures/Saved%20Pictures/Screenshot_99.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="243.0" layoutY="47.0" stroke="#006eff" strokeType="OUTSIDE" strokeWidth="3.0" text="Atlantic Rim">
          <font>
             <Font size="21.0" />
          </font>
       </Text>
-      <TextArea layoutX="130.0" layoutY="85.0" prefHeight="230.0" prefWidth="347.0" text="Armies of monstrous creatures called Kemono arose from&#10;the sea, bringing with them a new world war against mankind.&#10;To fight the Kemono, mankind developed giant robots called&#10;Ryoshis, designed to be piloted by two humans locked&#10;together in a neural bridge. However, even the Ryoshis&#10;are not enough to defeat the Kemono, and humanity is on&#10;the verge of defeat. It all comes down to the bravest warriors&#10;who are willing to put their lives on the line for humanity's &#10;victory. &#10;&#10;Runtime: 130 minutes" />
+      <TextArea layoutX="60.0" layoutY="81.0" opacity="0.7" prefHeight="220.0" prefWidth="480.0" wrapText="true">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></TextArea>
+      <Label contentDisplay="CENTER" layoutX="60.0" layoutY="81.0" prefHeight="135.0" prefWidth="480.0" style="-fx-background-color: 00;" text="Armies of monstrous creatures called Kemono arose from the sea, bringing with them a new world war against mankind. To fight the Kemono, mankind developed giant robots called Ryoshis, designed to be piloted by two humans locked together in a neural bridge. However, even the Ryoshis are not enough to defeat the Kemono, and humanity is on the verge of defeat. It all comes down to the bravest warriors who are willing to put their lives on the line for humanity's victory. " textAlignment="CENTER" textFill="#006eff" wrapText="true" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="81.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="216.0" text="Runtime: 130 minutes" textAlignment="CENTER" textFill="#006eff" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
