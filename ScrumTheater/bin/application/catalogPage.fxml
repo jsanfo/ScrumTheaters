@@ -41,6 +41,6 @@
                </font></Button>
         </items>
       </ToolBar>
-      <ListView fx:id="catalogListView" layoutX="200.0" layoutY="125.0" prefHeight="275.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0" />
+      <ListView fx:id="catalogListView" layoutX="146.0" layoutY="124.0" prefHeight="276.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="124.0" />
    </children>
 </AnchorPane>

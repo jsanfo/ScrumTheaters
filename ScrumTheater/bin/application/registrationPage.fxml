@@ -27,14 +27,13 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="226.0" layoutY="154.0" />
-      <PasswordField layoutX="227.0" layoutY="200.0" />
-      <PasswordField layoutX="227.0" layoutY="250.0" />
-      <TextField layoutX="227.0" layoutY="300.0" />
+      <TextField fx:id="regUserField" layoutX="226.0" layoutY="154.0" />
+      <PasswordField fx:id="regPasswordField" layoutX="227.0" layoutY="200.0" />
+      <PasswordField fx:id="confirmPasswordField" layoutX="227.0" layoutY="250.0" />
       <Label layoutX="226.0" layoutY="137.0" text="Username" />
       <Label layoutX="227.0" layoutY="183.0" text="Password" />
       <Label layoutX="229.0" layoutY="233.0" text="Confirm Password" />
-      <Label layoutX="229.0" layoutY="283.0" text="Email" />
-      <Button fx:id="createAccountBtn" layoutX="251.0" layoutY="345.0" mnemonicParsing="false" onAction="#createAccClicked" text="Create Account" />
+      <Button fx:id="registerAccountBtn" layoutX="247.0" layoutY="315.0" mnemonicParsing="false" onAction="#registerAccClicked" text="Register Account" />
+      <Label fx:id="regErrorLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="275.0" prefHeight="35.0" prefWidth="600.0" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="275.0" />
    </children>
 </AnchorPane>
