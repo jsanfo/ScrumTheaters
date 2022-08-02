@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="235.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Neptunian">
+      <ImageView fitHeight="474.0" fitWidth="722.0" layoutX="-119.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/theNeptunian.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="234.0" layoutY="55.0" smooth="false" stroke="#006eff" strokeType="OUTSIDE" strokeWidth="4.0" text="The Neptunian" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextArea layoutX="103.0" layoutY="74.0" prefHeight="213.0" prefWidth="394.0" text="When astronauts blast off from the planet Neptune, they leave behind&#10;Marco Witey, presumed dead after a fierce storm. With only a meager&#10;amount of supplies, the stranded visitor must utilize his wits and spirit&#10;to find a way to survive on the hostile planet. Meanwhile, back on&#10;Earth, members of NASA and a team of international scientists work&#10;tirelessly to bring him home, while his crew mates hatch their own&#10;plan for a daring rescue mission. Will he be able to make it back home?&#10;&#10;Runtime: 147 minutes" />
+      <TextArea layoutX="43.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="273.0" prefWidth="530.0" text="&#10;&#10;" />
+      <Label layoutX="65.0" layoutY="78.0" prefHeight="190.0" prefWidth="480.0" text="When astronauts blast off from the planet Neptune, they leave behindMarco Witey, presumed dead after a fierce storm. With only a meageramount of supplies, the stranded visitor must utilize his wits and spiritto find a way to survive on the hostile planet. Meanwhile, back onEarth, members of NASA and a team of international scientists worktirelessly to bring him home, while his crew mates hatch their ownplan for a daring rescue mission. Will he be able to make it back home?" textAlignment="CENTER" textFill="#0028ff" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="242.0" layoutY="268.0" text="Runtime: 147 minutes" textFill="#0028ff">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

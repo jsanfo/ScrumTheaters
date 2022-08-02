@@ -16,24 +16,25 @@
             <Image url="@../resources/images/AtlanticRimBG.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="243.0" layoutY="47.0" stroke="#006eff" strokeType="OUTSIDE" strokeWidth="3.0" text="Atlantic Rim">
+      <Text layoutX="243.0" layoutY="47.0" stroke="#616161" strokeType="OUTSIDE" strokeWidth="3.0" text="Atlantic Rim">
          <font>
             <Font size="21.0" />
          </font>
       </Text>
-      <TextArea layoutX="60.0" layoutY="81.0" opacity="0.7" prefHeight="220.0" prefWidth="480.0" wrapText="true">
+      <TextArea layoutX="60.0" layoutY="81.0" opacity="0.6" prefHeight="220.0" prefWidth="480.0" wrapText="true">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>
-      <Label contentDisplay="CENTER" layoutX="60.0" layoutY="81.0" prefHeight="135.0" prefWidth="480.0" style="-fx-background-color: 00;" text="Armies of monstrous creatures called Kemono arose from the sea, bringing with them a new world war against mankind. To fight the Kemono, mankind developed giant robots called Ryoshis, designed to be piloted by two humans locked together in a neural bridge. However, even the Ryoshis are not enough to defeat the Kemono, and humanity is on the verge of defeat. It all comes down to the bravest warriors who are willing to put their lives on the line for humanity's victory. " textAlignment="CENTER" textFill="#006eff" wrapText="true" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="81.0">
+      <Label contentDisplay="CENTER" layoutX="60.0" layoutY="81.0" prefHeight="135.0" prefWidth="480.0" style="-fx-background-color: 00;" text="Armies of monstrous creatures called Kemono arose from the sea, bringing with them a new world war against mankind. To fight the Kemono, mankind developed giant robots called Ryoshis, designed to be piloted by two humans locked together in a neural bridge. However, even the Ryoshis are not enough to defeat the Kemono, and humanity is on the verge of defeat. It all comes down to the bravest warriors who are willing to put their lives on the line for humanity's victory. " textAlignment="CENTER" textFill="#616161" wrapText="true" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="81.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="237.0" layoutY="216.0" text="Runtime: 130 minutes" textAlignment="CENTER" textFill="#006eff" wrapText="true">
+      <Label layoutX="237.0" layoutY="216.0" text="Runtime: 130 minutes" textAlignment="CENTER" textFill="#616161" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
    </children>
 </AnchorPane>
+
