@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <Text layoutX="240.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finding Fish" wrappingWidth="118.13665771484375">
+      <ImageView fitHeight="366.0" fitWidth="600.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/squidnadoBG.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="243.0" layoutY="47.0" stroke="#616161" strokeType="OUTSIDE" strokeWidth="3.0" text="Squidnado">
          <font>
-            <Font size="20.0" />
+            <Font size="21.0" />
          </font>
       </Text>
-      <TextArea layoutX="133.0" layoutY="97.0" prefHeight="206.0" prefWidth="333.0" text="When Marvin loses his son Memo after being kidnapped&#10;by humans, he sets out on a journey to find his son with&#10;the help of Lory, a fish he meets along the way. However,&#10;during the journey, he realizes his son is not the only&#10;fish that he has to find.&#10;&#10;&#10;Runtime: 90 minutes" />
+      <TextArea layoutX="60.0" layoutY="81.0" opacity="0.6" prefHeight="220.0" prefWidth="480.0" wrapText="true">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></TextArea>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="81.0" prefHeight="135.0" prefWidth="480.0" style="-fx-background-color: 00;" text="After a freak oceanic event leads to the squid population to&#10;rise to the surface off the coast of Los Angeles, scientists&#10;scramble to find answers. What they didn't anticipate was &#10;a storm system suddenly moving in to the area, producing &#10;a deadly tornado, and with it, hungry squids who will eat &#10;anything in their path.&#10;&#10;&#10;" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="81.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="216.0" text="Runtime: 90 minutes" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
