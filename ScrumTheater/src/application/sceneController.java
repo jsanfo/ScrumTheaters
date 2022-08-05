@@ -27,6 +27,7 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 	private TreeMap<String, String> userPasses = new TreeMap<>();
+	private User u;
 
 	// Login Page username TextField
 	@FXML
@@ -209,7 +210,7 @@ public class sceneController implements Initializable
 
 		if (Objects.equals(regPasswordField.getText(), confirmPasswordField.getText()))
 		{
-			User u = new User(regUserField.getText(), regPasswordField.getText());
+			u = new User(regUserField.getText(), regPasswordField.getText());
 			u.createAccountFile();
 
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
