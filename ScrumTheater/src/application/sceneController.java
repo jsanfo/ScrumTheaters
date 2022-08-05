@@ -94,7 +94,7 @@ public class sceneController implements Initializable
 	 */
 	public void titleClicked(MouseEvent event) throws IOException
 	{
-		root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -108,7 +108,7 @@ public class sceneController implements Initializable
 	 */
 	public void homeClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -122,7 +122,7 @@ public class sceneController implements Initializable
 	 */
 	public void catalogClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(getClass().getResource("catalogPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("catalogPage.fxml")));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -136,7 +136,7 @@ public class sceneController implements Initializable
 	 */
 	public void ticketsClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(getClass().getResource("ticketPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ticketPage.fxml")));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -150,7 +150,7 @@ public class sceneController implements Initializable
 	 */
 	public void accountClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(getClass().getResource("accountPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("accountPage.fxml")));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);

@@ -13,12 +13,12 @@
    <children>
       <AnchorPane prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="14.0" layoutY="6.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Label layoutX="14.0" layoutY="6.0" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="36.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Label>
          </children>
