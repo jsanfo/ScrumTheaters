@@ -44,5 +44,9 @@ public class User
             fos.close();
         }
     }
+    public String getUserName()
+    {
+        return userName;
+    }
 
 }
