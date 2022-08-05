@@ -27,7 +27,8 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 	private TreeMap<String, String> userPasses = new TreeMap<>();
-	private User u;
+	//private User currentUser = null;
+	private String currentUsername = "";
 
 	// Login Page username TextField
 	@FXML
@@ -35,6 +36,10 @@ public class sceneController implements Initializable
 	// Registration Page username TextField
 	@FXML
 	private TextField regUserField;
+	@FXML
+	private TextField accTextField;
+	@FXML
+	private TextField accPassField;
 	// Login Page password PasswordField
 	@FXML
 	private PasswordField passwordField;
@@ -151,11 +156,15 @@ public class sceneController implements Initializable
 	 */
 	public void accountClicked(ActionEvent event) throws IOException
 	{
+
 		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("accountPage.fxml")));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+
+		accTextField.setText(currentUsername);
+		accPassField.setText(userPasses.get(currentUsername));
 	}
 
 	/**
@@ -177,7 +186,10 @@ public class sceneController implements Initializable
 		if (!checkPasswordCorrect(username, password))
 			errorLbl.setText("Password does not match username provided");
 		else
+		{
 			homeClicked(event);
+		}
+
 	}
 
 	/**
@@ -202,6 +214,7 @@ public class sceneController implements Initializable
 	 */
 	public void registerAccClicked(ActionEvent event) throws IOException
 	{
+		User currentUser;
 		if (userPasses.containsKey(regUserField.getText()))
 		{
 			regErrorLbl.setText("This username is already in use");
@@ -210,8 +223,8 @@ public class sceneController implements Initializable
 
 		if (Objects.equals(regPasswordField.getText(), confirmPasswordField.getText()))
 		{
-			u = new User(regUserField.getText(), regPasswordField.getText());
-			u.createAccountFile();
+			currentUser = new User(regUserField.getText(), regPasswordField.getText());
+			currentUser.createAccountFile();
 
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -307,4 +320,5 @@ public class sceneController implements Initializable
 			userPasses.put(user, pass);
 		}
 	}
+
 }

@@ -66,10 +66,8 @@
       <Button layoutX="396.0" layoutY="225.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="25.0" prefWidth="110.0" text="Transactions" />
       <Button layoutX="396.0" layoutY="257.0" mnemonicParsing="false" text="Edit Payment Info" />
       <Label layoutX="64.0" layoutY="216.0" text="Username:" />
-      <Label layoutX="64.0" layoutY="247.0" text="Email:" />
-      <Label layoutX="64.0" layoutY="278.0" text="Password:" />
-      <TextField disable="true" editable="false" layoutX="134.0" layoutY="212.0" prefHeight="25.0" prefWidth="116.0" text="[User Display Here]" />
-      <TextField disable="true" editable="false" layoutX="133.0" layoutY="243.0" prefHeight="25.0" prefWidth="116.0" text="[User Display Here]" />
-      <PasswordField disable="true" editable="false" layoutX="132.0" layoutY="274.0" prefHeight="25.0" prefWidth="116.0" text="[password]" />
+      <Label layoutX="66.0" layoutY="248.0" text="Password:" />
+      <TextField fx:id="accTextField" disable="true" editable="false" layoutX="134.0" layoutY="212.0" prefHeight="25.0" prefWidth="116.0" text="[User Display Here]" />
+      <PasswordField fx:id="accPassField" disable="true" editable="false" layoutX="134.0" layoutY="244.0" prefHeight="25.0" prefWidth="116.0" text="[password]" />
    </children>
 </AnchorPane>
