@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="256.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Big Guy 7">
+      <ImageView fitHeight="474.0" fitWidth="722.0" layoutX="-119.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/descriptionBackGrounds/bigGuy7_BG.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="234.0" layoutY="55.0" smooth="false" stroke="RED" strokeType="OUTSIDE" strokeWidth="4.0" text="Big Guy 7" textAlignment="CENTER">
          <font>
-            <Font size="21.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextArea layoutX="103.0" layoutY="93.0" prefHeight="213.0" prefWidth="393.0" text="Robotics prodigy Guy lives in the city of Los Frantokyo. Next to his&#10;older brother, Modashi, Guy's closest companion is Maybax, a robot&#10;whose sole purpose is to take care of people. When a devastating turn&#10;of events throws Guy into the middle of a dangerous plot, he&#10;transforms Maybax and his other friends, Yo Yo Tomango, Sriracha, &#10;Lemon Pepper, and Derf into a band of high-tech heroes, in the hopes&#10;that the power of friendship can overthrow the danger.&#10;&#10;Runtime: 80 minutes" />
+      <TextArea layoutX="43.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="273.0" prefWidth="530.0" text="&#10;&#10;" />
+      <Label layoutX="79.0" layoutY="82.0" prefHeight="190.0" prefWidth="480.0" text="Robotics prodigy Guy lives in the city of Los Frantokyo. Next to his&#10;older brother, Modashi, Guy's closest companion is Maybax, a robot&#10;whose sole purpose is to take care of people. When a devastating turn&#10;of events throws Guy into the middle of a dangerous plot, he&#10;transforms Maybax and his other friends, Yo Yo Tomango, Sriracha, &#10;Lemon Pepper, and Derf into a band of high-tech heroes, in the hopes&#10;that the power of friendship can overthrow the danger." textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="242.0" layoutY="268.0" text="Runtime: 80 minutes" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>
