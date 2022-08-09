@@ -27,8 +27,6 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 	private TreeMap<String, String> userPasses = new TreeMap<>();
-	//private User currentUser = null;
-	private String currentUsername = "";
 
 	// Login Page username TextField
 	@FXML
@@ -114,11 +112,7 @@ public class sceneController implements Initializable
 	 */
 	public void homeClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		goTo(event, "homePage.fxml");
 	}
 
 	/**
@@ -128,11 +122,7 @@ public class sceneController implements Initializable
 	 */
 	public void catalogClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("catalogPage.fxml")));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		goTo(event, "catalogPage.fxml");
 	}
 
 	/**
@@ -142,11 +132,7 @@ public class sceneController implements Initializable
 	 */
 	public void ticketsClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ticketPage.fxml")));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		goTo(event, "ticketPage.fxml");
 	}
 
 	/**
@@ -156,15 +142,7 @@ public class sceneController implements Initializable
 	 */
 	public void accountClicked(ActionEvent event) throws IOException
 	{
-
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("accountPage.fxml")));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-
-		accTextField.setText(currentUsername);
-		accPassField.setText(userPasses.get(currentUsername));
+		goTo(event, "accountPage.fxml");
 	}
 
 	/**
@@ -199,11 +177,7 @@ public class sceneController implements Initializable
 	 */
 	public void createAccClicked(ActionEvent event) throws IOException
 	{
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("registrationPage.fxml")));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		goTo(event, "registrationPage.fxml");
 	}
 
 	/**
@@ -214,7 +188,6 @@ public class sceneController implements Initializable
 	 */
 	public void registerAccClicked(ActionEvent event) throws IOException
 	{
-		User currentUser;
 		if (userPasses.containsKey(regUserField.getText()))
 		{
 			regErrorLbl.setText("This username is already in use");
@@ -223,21 +196,44 @@ public class sceneController implements Initializable
 
 		if (Objects.equals(regPasswordField.getText(), confirmPasswordField.getText()))
 		{
-			currentUser = new User(regUserField.getText(), regPasswordField.getText());
-			currentUser.createAccountFile();
-
-			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
-			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
+			goTo(event, "homePage.fxml");
 		}
 
+	}
+
+	public void ARClicked(ActionEvent event) throws IOException {
+		goTo(event, "Atlantic_Rim.fxml");
+	}
+	public void BG7Clicked(ActionEvent event) throws IOException {
+		goTo(event, "BigGuy7.fxml");
+	}
+	public void FFClicked(ActionEvent event) throws IOException {
+		goTo(event, "Finding_Fish.fxml");
+	}
+	public void QAClicked(ActionEvent event) throws IOException {
+		goTo(event, "QuickAndAngry.fxml");
+	}
+	public void SquidClicked(ActionEvent event) throws IOException {
+		goTo(event, "Squidnado.fxml");
+	}
+	public void NeptunianClicked(ActionEvent event) throws IOException {
+		goTo(event, "TheNeptunian.fxml");
+	}
+	public void RevengersClicked(ActionEvent event) throws IOException {
+		goTo(event, "TheRevengers.fxml");
 	}
 
 
 	// Helper Methods //
 
+	private void goTo(ActionEvent event, String fileName) throws IOException
+	{
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fileName)));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 	/**
 	 * Gets the movie list information from movieNames.txt.
 	 * 	Used in initialize method to initialize the catalog list.

@@ -25,7 +25,7 @@
             <Font size="21.0" />
          </font>
       </Text>
-      <TextArea layoutX="60.0" layoutY="214.0" opacity="0.6" prefHeight="171.0" prefWidth="480.0" wrapText="true">
+      <TextArea disable="true" layoutX="60.0" layoutY="214.0" opacity="0.6" prefHeight="171.0" prefWidth="480.0" wrapText="true">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>

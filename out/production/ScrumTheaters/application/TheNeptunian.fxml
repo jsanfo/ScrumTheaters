@@ -1,34 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <ImageView fitHeight="474.0" fitWidth="722.0" layoutX="-119.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="474.0" fitWidth="722.0" layoutX="-123.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="80.0">
          <image>
-            <Image url="@../resources/images/movThumbnails/theNeptunian.jpg" />
+            <Image url="@../resources/images/descriptionBackGrounds/theNeptunianBG.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="234.0" layoutY="55.0" smooth="false" stroke="#006eff" strokeType="OUTSIDE" strokeWidth="4.0" text="The Neptunian" textAlignment="CENTER">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <TextArea layoutX="43.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="273.0" prefWidth="530.0" text="&#10;&#10;" />
-      <Label layoutX="65.0" layoutY="78.0" prefHeight="190.0" prefWidth="480.0" text="When astronauts blast off from the planet Neptune, they leave behindMarco Witey, presumed dead after a fierce storm. With only a meageramount of supplies, the stranded visitor must utilize his wits and spiritto find a way to survive on the hostile planet. Meanwhile, back onEarth, members of NASA and a team of international scientists worktirelessly to bring him home, while his crew mates hatch their ownplan for a daring rescue mission. Will he be able to make it back home?" textAlignment="CENTER" textFill="#0028ff" wrapText="true">
+      <TextArea disable="true" layoutX="40.0" layoutY="218.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="212.0" prefWidth="530.0" text="&#10;&#10;" />
+      <Label layoutX="65.0" layoutY="197.0" prefHeight="190.0" prefWidth="480.0" text="When astronauts blast off from the planet Neptune, they leave behindMarco Witey, presumed dead after a fierce storm. With only a meageramount of supplies, the stranded visitor must utilize his wits and spiritto find a way to survive on the hostile planet. Meanwhile, back onEarth, members of NASA and a team of international scientists worktirelessly to bring him home, while his crew mates hatch their ownplan for a daring rescue mission. Will he be able to make it back home?" textAlignment="CENTER" textFill="#0028ff" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="242.0" layoutY="268.0" text="Runtime: 147 minutes" textFill="#0028ff">
+      <Label layoutX="238.0" layoutY="378.0" text="Runtime: 147 minutes" textFill="#0028ff">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
+      <ToolBar layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <items>
+            <Button mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" text="Home">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" text="Catalog">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" text="Tickets">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </items>
+      </ToolBar>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="227.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="41.0" layoutY="54.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Button layoutX="725.0" layoutY="10.0" mnemonicParsing="false" onAction="#accountClicked" text="Account" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="10.0" />
+            <TextField layoutX="785.0" layoutY="10.0" promptText="Search" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="235.0" layoutY="192.0" smooth="false" stroke="#006eff" strokeType="OUTSIDE" strokeWidth="4.0" text="The Neptunian" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

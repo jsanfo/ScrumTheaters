@@ -12,14 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
       <ImageView fitHeight="372.0" fitWidth="722.0" layoutX="-122.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/images/descriptionBackGrounds/revengersBG.jpg" />
          </image>
       </ImageView>
-      <TextArea layoutX="54.0" layoutY="248.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="169.0" prefWidth="478.0" text="&#10;&#10;" />
+      <TextArea disable="true" layoutX="54.0" layoutY="248.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="169.0" prefWidth="478.0" text="&#10;&#10;" />
       <Label layoutX="90.0" layoutY="196.0" prefHeight="190.0" prefWidth="419.0" text="Join Insect Man, Thunder Man, Special Agent, RoboMan, The Captain, and The Bulk, as they team up to stop the destruction of Earth from Mischief. Together with the power of friendship, they can overcome their most difficult challenge yet." textAlignment="CENTER" textFill="#1a2181" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />

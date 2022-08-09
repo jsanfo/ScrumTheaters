@@ -1,40 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <ImageView fitHeight="366.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="366.0" fitWidth="600.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/images/descriptionBackGrounds/AtlanticRimBG.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="243.0" layoutY="47.0" stroke="#616161" strokeType="OUTSIDE" strokeWidth="3.0" text="Atlantic Rim">
+      <Text layoutX="229.0" layoutY="178.0" stroke="#616161" strokeType="OUTSIDE" strokeWidth="3.0" text="Atlantic Rim">
          <font>
             <Font size="21.0" />
          </font>
       </Text>
-      <TextArea layoutX="60.0" layoutY="81.0" opacity="0.6" prefHeight="220.0" prefWidth="480.0" wrapText="true">
+      <TextArea disable="true" layoutX="60.0" layoutY="214.0" opacity="0.6" prefHeight="171.0" prefWidth="480.0" wrapText="true">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>
-      <Label contentDisplay="CENTER" layoutX="60.0" layoutY="81.0" prefHeight="135.0" prefWidth="480.0" style="-fx-background-color: 00;" text="Armies of monstrous creatures called Kemono arose from the sea, bringing with them a new world war against mankind. To fight the Kemono, mankind developed giant robots called Ryoshis, designed to be piloted by two humans locked together in a neural bridge. However, even the Ryoshis are not enough to defeat the Kemono, and humanity is on the verge of defeat. It all comes down to the bravest warriors who are willing to put their lives on the line for humanity's victory. " textAlignment="CENTER" textFill="#616161" wrapText="true" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="81.0">
+      <Label contentDisplay="CENTER" layoutX="60.0" layoutY="184.0" prefHeight="171.0" prefWidth="480.0" style="-fx-background-color: 00;" text="Armies of monstrous creatures called Kemono arose from the sea, bringing with them a new world war against mankind. To fight the Kemono, mankind developed giant robots called Ryoshis, designed to be piloted by two humans locked together in a neural bridge. However, even the Ryoshis are not enough to defeat the Kemono, and humanity is on the verge of defeat. It all comes down to the bravest warriors who are willing to put their lives on the line for humanity's victory. " textAlignment="CENTER" textFill="#616161" wrapText="true" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="184.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="237.0" layoutY="216.0" text="Runtime: 130 minutes" textAlignment="CENTER" textFill="#616161" wrapText="true">
+      <Label layoutX="223.0" layoutY="356.0" text="Runtime: 130 minutes" textAlignment="CENTER" textFill="#616161" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <ToolBar layoutY="80.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <items>
+            <Button mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" text="Home">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" text="Catalog">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" text="Tickets">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </items>
+      </ToolBar>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="227.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="41.0" layoutY="54.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Button layoutX="725.0" layoutY="10.0" mnemonicParsing="false" onAction="#accountClicked" text="Account" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="10.0" />
+            <TextField layoutX="785.0" layoutY="10.0" promptText="Search" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
-

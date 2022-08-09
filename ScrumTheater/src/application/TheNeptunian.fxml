@@ -12,14 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
       <ImageView fitHeight="474.0" fitWidth="722.0" layoutX="-123.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="80.0">
          <image>
             <Image url="@../resources/images/descriptionBackGrounds/theNeptunianBG.jpg" />
          </image>
       </ImageView>
-      <TextArea layoutX="40.0" layoutY="218.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="212.0" prefWidth="530.0" text="&#10;&#10;" />
+      <TextArea disable="true" layoutX="40.0" layoutY="218.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="212.0" prefWidth="530.0" text="&#10;&#10;" />
       <Label layoutX="65.0" layoutY="197.0" prefHeight="190.0" prefWidth="480.0" text="When astronauts blast off from the planet Neptune, they leave behindMarco Witey, presumed dead after a fierce storm. With only a meageramount of supplies, the stranded visitor must utilize his wits and spiritto find a way to survive on the hostile planet. Meanwhile, back onEarth, members of NASA and a team of international scientists worktirelessly to bring him home, while his crew mates hatch their ownplan for a daring rescue mission. Will he be able to make it back home?" textAlignment="CENTER" textFill="#0028ff" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />

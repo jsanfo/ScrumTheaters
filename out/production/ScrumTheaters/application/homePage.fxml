@@ -96,7 +96,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="186.0" fitWidth="182.0" layoutX="568.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="186.0" fitWidth="182.0" layoutX="568.0" layoutY="10.0" onDragDetected="#NeptunianClicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/images/movThumbnails/theNeptunian.jpg" />
                            </image>
@@ -108,7 +108,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="67.0" prefWidth="964.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" text="Big Guy 7">
+                        <Button mnemonicParsing="false" onAction="#BG7Clicked" prefHeight="39.0" prefWidth="182.0" text="Big Guy 7">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -116,7 +116,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" text="Finding Fish">
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#FFClicked" prefHeight="39.0" prefWidth="182.0" text="Finding Fish">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -124,7 +124,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="196.0" layoutY="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" text="Mravel's The Revengers">
+                        <Button layoutX="196.0" layoutY="10.0" mnemonicParsing="false" onAction="#RevengersClicked" prefHeight="39.0" prefWidth="182.0" text="Mravel's The Revengers">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -132,7 +132,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="382.0" layoutY="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" text="Squidnado">
+                        <Button layoutX="382.0" layoutY="10.0" mnemonicParsing="false" onAction="#SquidClicked" prefHeight="39.0" prefWidth="182.0" text="Squidnado">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -140,7 +140,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="568.0" layoutY="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" text="The Neptunian">
+                        <Button layoutX="568.0" layoutY="10.0" mnemonicParsing="false" onAction="#NeptunianClicked" prefHeight="39.0" prefWidth="182.0" text="The Neptunian">
                            <font>
                               <Font size="18.0" />
                            </font>

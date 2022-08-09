@@ -25,11 +25,11 @@
             <Font size="21.0" />
          </font>
       </Text>
-      <TextArea layoutX="60.0" layoutY="210.0" opacity="0.6" prefHeight="178.0" prefWidth="480.0" wrapText="true">
+      <TextArea disable="true" layoutX="60.0" layoutY="210.0" opacity="0.6" prefHeight="178.0" prefWidth="480.0" wrapText="true">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>
-      <Label contentDisplay="CENTER" layoutX="87.0" layoutY="223.0" style="-fx-background-color: 00;" text="Robotics prodigy Guy lives in the city of Los Frantokyo. Next to his&#10;older brother, Modashi, Guy's closest companion is Maybax, a robot&#10;whose sole purpose is to take care of people. When a devastating turn&#10;of events throws Guy into the middle of a dangerous plot, he&#10;transforms Maybax and his other friends, Yo Yo Tomango, Sriracha, &#10;Lemon Pepper, and Derf into a band of high-tech heroes, in the hopes&#10;that the power of friendship can overthrow the danger. " textAlignment="CENTER" textFill="#ffab4b" wrapText="true">
+      <Label contentDisplay="CENTER" layoutX="87.0" layoutY="223.0" text="Robotics prodigy Guy lives in the city of Los Frantokyo. Next to his&#10;older brother, Modashi, Guy's closest companion is Maybax, a robot&#10;whose sole purpose is to take care of people. When a devastating turn&#10;of events throws Guy into the middle of a dangerous plot, he&#10;transforms Maybax and his other friends, Yo Yo Tomango, Sriracha, &#10;Lemon Pepper, and Derf into a band of high-tech heroes, in the hopes&#10;that the power of friendship can overthrow the danger. " textAlignment="CENTER" textFill="#ffab4b" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
