@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="252.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squidnado">
+      <ImageView fitHeight="474.0" fitWidth="722.0" layoutX="-119.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/descriptionBackGrounds/squidnadoBG.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="234.0" layoutY="55.0" smooth="false" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="4.0" text="Squidnado" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextArea layoutX="130.0" layoutY="86.0" prefHeight="228.0" prefWidth="339.0" text="After a freak oceanic event leads to the squid population to&#10;rise to the surface off the coast of Los Angeles, scientists&#10;scramble to find answers. What they didn't anticipate was &#10;a storm system suddenly moving in to the area, producing &#10;a deadly tornado, and with it, hungry squids who will eat &#10;anything in their path.&#10;&#10;&#10;Runtime: 90 minutes" />
+      <TextArea layoutX="43.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="273.0" prefWidth="530.0" text="&#10;&#10;" />
+      <Label layoutX="123.0" layoutY="80.0" prefHeight="190.0" prefWidth="356.0" text="After a freak oceanic event leads to the squid population to&#10;rise to the surface off the coast of Los Angeles, scientists&#10;scramble to find answers. What they didn't anticipate was &#10;a storm system suddenly moving in to the area, producing &#10;a deadly tornado, and with it, hungry squids who will eat &#10;anything in their path." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="242.0" layoutY="268.0" text="Runtime: 90 minutes" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>
