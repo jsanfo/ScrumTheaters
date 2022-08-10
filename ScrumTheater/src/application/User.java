@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class User
 {
@@ -50,7 +50,7 @@ public class User
      */
     public void createAccountFile() throws IOException
     {
-        String userFileName = "ScrumTheater/src/resources/text/accountFiles/" + userName;
+        String userFileName = getFilePath();
         String userrn = userName + "\r\n";
         String passrn = password + "\r\n";
         String cardnumrn = cardNum + "\r\n";
@@ -65,7 +65,37 @@ public class User
             fos.close();
         }
     }
-    public void readAccountFile(File f) throws FileNotFoundException {
+    public String getFilePath()
+    {
+        return "ScrumTheater/src/resources/text/accountFiles/" + userName;
+    }
+    public void overwriteLine(String oldLine, String newLine) throws IOException {
+        Path path = Paths.get(getFilePath());
+        List<String> lines = new ArrayList<>(Files.readAllLines(path));
+
+        for (int i = 0; i < lines.size(); i++)
+        {
+            if (Objects.equals(lines.get(i), oldLine))
+            {
+                lines.set(i, newLine);
+                break;
+            }
+        }
+
+        Files.write(path, lines);
+    }
+    public void renameFile(String newName)
+    {
+        Path oldPath = Paths.get(getFilePath());
+        Path newPath = Paths.get("ScrumTheater/src/resources/text/accountFiles/" + newName);
+
+        File oldf = new File(oldPath.toUri());
+        File newf = new File(newPath.toUri());
+
+        oldf.renameTo(newf);
+    }
+
+    private void readAccountFile(File f) throws FileNotFoundException {
         LinkedList<String> lines = new LinkedList<>();
         Scanner sc = new Scanner(f);
 
@@ -77,10 +107,31 @@ public class User
         {
             lines.add(sc.nextLine());
         }
+        sc.close();
     }
     public String getUserName()
     {
         return userName;
     }
+    public String getCardNum()
+    {
+        return cardNum;
+    }
 
+    public void setUserName(String newUserName) throws IOException
+    {
+        overwriteLine(userName, newUserName);
+        renameFile(newUserName);
+        userName = newUserName;
+    }
+    public void setPassword(String newPassword) throws IOException
+    {
+        overwriteLine(password, newPassword);
+        password = newPassword;
+    }
+    public void setCardNum(String newCardNum) throws IOException
+    {
+        overwriteLine(cardNum, newCardNum);
+        cardNum = newCardNum;
+    }
 }

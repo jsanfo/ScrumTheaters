@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,10 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -29,7 +28,7 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 	private TreeMap<String, String> userPasses = new TreeMap<>();
-	private User currentUser;
+	private static User currentUser;
 
 	// Login Page username TextField
 	@FXML
@@ -43,6 +42,14 @@ public class sceneController implements Initializable
 	private TextField accTextField;
 	@FXML
 	private TextField accPassField;
+	@FXML
+	private TextField accCardField;
+	@FXML
+	private Button finalizeBtn;
+	@FXML
+	private Button editProfBtn;
+	@FXML
+	private Button viewInfoBtn;
 	// Login Page password PasswordField
 	@FXML
 	private PasswordField passwordField;
@@ -90,7 +97,6 @@ public class sceneController implements Initializable
 	{
 		try {
 			catalogListView.getItems().addAll(getMovieList());
-
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -190,6 +196,74 @@ public class sceneController implements Initializable
 	{
 		goTo(event, "registrationPage.fxml");
 	}
+	public void viewInfoClicked(ActionEvent event)
+	{
+		accTextField.setText(currentUser.getUserName());
+		accPassField.setText(userPasses.get(currentUser.getUserName()));
+		accCardField.setText(currentUser.getCardNum());
+
+		viewInfoBtn.setDisable(true);
+		viewInfoBtn.setVisible(false);
+
+		editProfBtn.setDisable(false);
+		editProfBtn.setVisible(true);
+	}
+	public void editProfileClicked(ActionEvent event)
+	{
+		accTextField.setDisable(false);
+		accPassField.setDisable(false);
+		accCardField.setDisable(false);
+
+		editProfBtn.setDisable(true);
+		editProfBtn.setVisible(false);
+
+		finalizeBtn.setDisable(false);
+		finalizeBtn.setVisible(true);
+	}
+	public void finalizeClicked() throws IOException {
+		if (Objects.equals(accTextField.getText(), accPassField.getText()))
+		{
+			errorLbl.setText("Username cannot be the same as password");
+			return;
+		}
+		else if (Objects.equals(accTextField.getText(), accCardField.getText()))
+		{
+			errorLbl.setText("Username cannot be the same as Card Number");
+			return;
+		}
+		else if (Objects.equals(accPassField.getText(), accCardField.getText()))
+		{
+			errorLbl.setText("Password cannot be the same as Card Number");
+			return;
+		}
+
+		if (accCardField.getText().length() != 16)
+		{
+			errorLbl.setText("Card Number must be 16 digits");
+			return;
+		}
+		else if (!accCardField.getText().matches("[0-9]+"))
+		{
+			errorLbl.setText("Card Number must only contain numbers.");
+			return;
+		}
+		currentUser.setUserName(accTextField.getText());
+		currentUser.setPassword(accPassField.getText());
+		currentUser.setCardNum(accCardField.getText());
+
+		finalizeBtn.setDisable(true);
+		finalizeBtn.setVisible(false);
+
+		viewInfoBtn.setDisable(false);
+		viewInfoBtn.setVisible(true);
+
+		accTextField.setDisable(true);
+		accTextField.setText("");
+		accPassField.setDisable(true);
+		accPassField.setText("");
+		accCardField.setDisable(true);
+		accCardField.setText("");
+	}
 
 	/**
 	 * Registers the user's new account with the parameters provided in the
@@ -213,6 +287,22 @@ public class sceneController implements Initializable
 		else if (cardNumField.getText().length() != 16)
 		{
 			regErrorLbl.setText("Invalid Card Number: Must Be 16 Characters");
+			return;
+		}
+
+		if (Objects.equals(regUserField.getText(), regPasswordField.getText()))
+		{
+			regErrorLbl.setText("Username cannot be the same as password");
+			return;
+		}
+		else if (Objects.equals(regUserField.getText(), cardNumField.getText()))
+		{
+			regErrorLbl.setText("Username cannot be the same as Card Number");
+			return;
+		}
+		else if (Objects.equals(regPasswordField.getText(), cardNumField.getText()))
+		{
+			regErrorLbl.setText("Password cannot be the same as Card Number");
 			return;
 		}
 
@@ -278,6 +368,7 @@ public class sceneController implements Initializable
 			movieList.add(sc.nextLine());
 		}
 
+		is.close();
 		sc.close();
 
 		Collections.sort(movieList);
@@ -342,6 +433,7 @@ public class sceneController implements Initializable
 			String pass = sc.nextLine();
 
 			userPasses.put(user, pass);
+			sc.close();
 		}
 	}
 }
