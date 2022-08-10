@@ -18,6 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -27,6 +29,7 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 	private TreeMap<String, String> userPasses = new TreeMap<>();
+	private User currentUser;
 
 	// Login Page username TextField
 	@FXML
@@ -34,6 +37,8 @@ public class sceneController implements Initializable
 	// Registration Page username TextField
 	@FXML
 	private TextField regUserField;
+	@FXML
+	private TextField cardNumField;
 	@FXML
 	private TextField accTextField;
 	@FXML
@@ -58,7 +63,9 @@ public class sceneController implements Initializable
 	private ListView<String> catalogListView = new ListView<>();
 	// Ticket Page List View
 	@FXML
-	private ListView<String> ticketListView = new ListView<>();
+	private ListView<String> purchasedTicketListView = new ListView<>();
+	@FXML
+	private ListView<String> pastTicketListView = new ListView<>();
 
 	/**
 	 * Default constructor for sceneController class
@@ -83,6 +90,7 @@ public class sceneController implements Initializable
 	{
 		try {
 			catalogListView.getItems().addAll(getMovieList());
+
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -152,8 +160,10 @@ public class sceneController implements Initializable
 	 */
 	public void loginClicked(ActionEvent event) throws IOException
 	{
+
 		String username = userField.getText();
 		String password = passwordField.getText();
+
 
 		if (!checkUserIsRegistered(username))
 		{
@@ -162,14 +172,15 @@ public class sceneController implements Initializable
 		}
 
 		if (!checkPasswordCorrect(username, password))
+		{
 			errorLbl.setText("Password does not match username provided");
+		}
 		else
 		{
+			currentUser = new User(new File("ScrumTheater/src/resources/text/accountFiles/" + username));
 			homeClicked(event);
 		}
-
 	}
-
 	/**
 	 * When create account button is clicked, open the registration page.
 	 * @param event Button clicked
@@ -194,13 +205,28 @@ public class sceneController implements Initializable
 			return;
 		}
 
+		if (!cardNumField.getText().matches("[0-9]+"))
+		{
+			regErrorLbl.setText("Invalid Card Number: Numbers only");
+			return;
+		}
+		else if (cardNumField.getText().length() != 16)
+		{
+			regErrorLbl.setText("Invalid Card Number: Must Be 16 Characters");
+			return;
+		}
+
 		if (Objects.equals(regPasswordField.getText(), confirmPasswordField.getText()))
 		{
+
+			currentUser = new User(regUserField.getText(),
+					regPasswordField.getText(),
+					cardNumField.getText());
+			currentUser.createAccountFile();
 			goTo(event, "homePage.fxml");
 		}
 
 	}
-
 	public void ARClicked(ActionEvent event) throws IOException {
 		goTo(event, "Atlantic_Rim.fxml");
 	}
@@ -307,6 +333,8 @@ public class sceneController implements Initializable
 		File accountFolder = new File("ScrumTheater/src/resources/text/accountFiles");
 		List<File> files = List.of(Objects.requireNonNull(accountFolder.listFiles()));
 
+
+
 		for (int i = 0; i < files.size(); i++)
 		{
 			Scanner sc = new Scanner(files.get(i));
@@ -316,5 +344,4 @@ public class sceneController implements Initializable
 			userPasses.put(user, pass);
 		}
 	}
-
 }

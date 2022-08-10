@@ -54,7 +54,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ListView layoutX="14.0" layoutY="160.0" prefHeight="230.0" prefWidth="290.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="296.0" AnchorPane.topAnchor="160.0" />
-      <ListView layoutX="300.0" layoutY="160.0" prefHeight="230.0" prefWidth="290.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="160.0" />
+      <ListView fx:id="purchasedTicketListView" layoutX="14.0" layoutY="160.0" prefHeight="230.0" prefWidth="290.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="296.0" AnchorPane.topAnchor="160.0" />
+      <ListView fx:id="pastTicketListView" layoutX="300.0" layoutY="160.0" prefHeight="230.0" prefWidth="290.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="160.0" />
    </children>
 </AnchorPane>

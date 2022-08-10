@@ -29,7 +29,7 @@
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>
-      <Label contentDisplay="CENTER" layoutX="60.0" layoutY="184.0" prefHeight="171.0" prefWidth="480.0" style="-fx-background-color: 00;" text="Armies of monstrous creatures called Kemono arose from the sea, bringing with them a new world war against mankind. To fight the Kemono, mankind developed giant robots called Ryoshis, designed to be piloted by two humans locked together in a neural bridge. However, even the Ryoshis are not enough to defeat the Kemono, and humanity is on the verge of defeat. It all comes down to the bravest warriors who are willing to put their lives on the line for humanity's victory. " textAlignment="CENTER" textFill="#616161" wrapText="true" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="184.0">
+      <Label contentDisplay="CENTER" layoutX="60.0" layoutY="184.0" prefHeight="171.0" prefWidth="480.0" text="Armies of monstrous creatures called Kemono arose from the sea, bringing with them a new world war against mankind. To fight the Kemono, mankind developed giant robots called Ryoshis, designed to be piloted by two humans locked together in a neural bridge. However, even the Ryoshis are not enough to defeat the Kemono, and humanity is on the verge of defeat. It all comes down to the bravest warriors who are willing to put their lives on the line for humanity's victory. " textAlignment="CENTER" textFill="#616161" wrapText="true" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="184.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

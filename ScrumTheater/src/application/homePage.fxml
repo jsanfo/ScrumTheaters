@@ -104,6 +104,16 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </ImageView>
+                        <ImageView fitHeight="186.0" fitWidth="182.0" layoutX="754.0" layoutY="10.0" onDragDetected="#NeptunianClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/images/movThumbnails/AtlanticRim.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="186.0" fitWidth="182.0" layoutX="940.0" layoutY="10.0" onDragDetected="#NeptunianClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/images/movThumbnails/quickAndAngry.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="67.0" prefWidth="964.0">
@@ -141,6 +151,16 @@
                            </HBox.margin>
                         </Button>
                         <Button layoutX="568.0" layoutY="10.0" mnemonicParsing="false" onAction="#NeptunianClicked" prefHeight="39.0" prefWidth="182.0" text="The Neptunian">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="754.0" layoutY="10.0" mnemonicParsing="false" onAction="#ARClicked" prefHeight="39.0" prefWidth="182.0" text="Atlantic Rim">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="936.0" layoutY="10.0" mnemonicParsing="false" onAction="#QAClicked" prefHeight="39.0" prefWidth="182.0" text="The Quick and The Angry">
                            <font>
                               <Font size="18.0" />
                            </font>
