@@ -16,7 +16,7 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginPage.fxml")));
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("application.css")).toExternalForm());
 
 			primaryStage.setTitle("Scrum Theaters");
 			primaryStage.getIcons().add(new Image("file:ScrumTheater/src/resources/images/logos/SquareLogo.png"));
