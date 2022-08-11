@@ -9,6 +9,9 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -317,6 +320,32 @@ public class sceneController implements Initializable
 		}
 
 	}
+
+	public void movieSelected(ActionEvent event) throws IOException {
+		String movie="";
+		ObservableList<String> movies;
+		movies=catalogListView.getSelectionModel().getSelectedItems();
+
+		for(String m: movies){
+			movie = m;
+		}
+		if (movie.equals("Atlantic Rim"))
+			ARClicked(event);
+		else if (movie.equals("Big Guy 7"))
+			BG7Clicked(event);
+		else if (movie.equals("Finding Fish"))
+			FFClicked(event);
+		else if (movie.equals("The Quick and The Angry"))
+			QAClicked(event);
+		else if (movie.equals("Squidnado"))
+			SquidClicked(event);
+		else if (movie.equals("The Neptunian"))
+			NeptunianClicked(event);
+		else if (movie.equals("Mravel's The Revengers"))
+			RevengersClicked(event);
+
+	}
+
 	public void ARClicked(ActionEvent event) throws IOException {
 		goTo(event, "Atlantic_Rim.fxml");
 	}
