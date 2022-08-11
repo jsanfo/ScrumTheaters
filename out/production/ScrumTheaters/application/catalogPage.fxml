@@ -41,6 +41,7 @@
                </font></Button>
         </items>
       </ToolBar>
-      <ListView fx:id="catalogListView" layoutX="146.0" layoutY="124.0" prefHeight="276.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="124.0" />
+      <ListView fx:id="catalogListView" layoutY="121.0" prefHeight="245.0" prefWidth="600.0" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="121.0" />
+      <Button layoutX="201.0" layoutY="374.0" mnemonicParsing="false" onAction="#movieSelected" prefHeight="25.0" prefWidth="199.0" text="Select" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="200.0" />
    </children>
 </AnchorPane>

@@ -20,7 +20,7 @@
             <Image url="@../resources/images/descriptionBackGrounds/findingFishBG.jpg" />
          </image>
       </ImageView>
-      <TextArea layoutX="56.0" layoutY="222.0" opacity="0.6" prefHeight="174.0" prefWidth="480.0" wrapText="true">
+      <TextArea editable="false" layoutX="56.0" layoutY="222.0" opacity="0.6" prefHeight="174.0" prefWidth="480.0" wrapText="true">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>
