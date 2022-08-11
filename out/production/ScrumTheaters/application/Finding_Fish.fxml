@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <ImageView fitHeight="350.0" fitWidth="599.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="350.0" fitWidth="599.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.9375" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <image>
             <Image url="@../resources/images/descriptionBackGrounds/findingFishBG.jpg" />
          </image>
@@ -72,5 +72,6 @@
             <TextField layoutX="785.0" layoutY="10.0" promptText="Search" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
          </children>
       </AnchorPane>
+      <Button layoutX="222.0" layoutY="360.0" mnemonicParsing="false" onAction="#showtimeSelected" prefHeight="25.0" prefWidth="149.0" text="See Showtimes" />
    </children>
 </AnchorPane>

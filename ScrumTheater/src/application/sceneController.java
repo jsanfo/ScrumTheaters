@@ -346,6 +346,10 @@ public class sceneController implements Initializable
 
 	}
 
+	public void showtimeSelected(ActionEvent event) throws IOException {
+		goTo(event, "showTimes.fxml" );
+	}
+
 	public void ARClicked(ActionEvent event) throws IOException {
 		goTo(event, "Atlantic_Rim.fxml");
 	}
