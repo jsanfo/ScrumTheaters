@@ -72,6 +72,6 @@
             <TextField layoutX="785.0" layoutY="10.0" promptText="Search" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="222.0" layoutY="360.0" mnemonicParsing="false" onAction="#showtimeSelected" prefHeight="25.0" prefWidth="149.0" text="See Showtimes" />
+      <Button layoutX="222.0" layoutY="360.0" mnemonicParsing="false" onAction="#showTimes" prefHeight="25.0" prefWidth="149.0" text="See Showtimes" />
    </children>
 </AnchorPane>

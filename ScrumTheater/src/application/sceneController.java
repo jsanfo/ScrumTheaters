@@ -346,7 +346,7 @@ public class sceneController implements Initializable
 
 	}
 
-	public void showtimeSelected(ActionEvent event) throws IOException {
+	public void showTimes(ActionEvent event) throws IOException {
 		goTo(event, "showTimes.fxml" );
 	}
 
