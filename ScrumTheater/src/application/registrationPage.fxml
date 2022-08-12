@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <AnchorPane layoutX="7.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="7.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="14.0" layoutY="14.0" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Label layoutX="14.0" layoutY="14.0" text="SCRUM Theaters" textFill="GOLD" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="36.0" />
                </font>
@@ -34,7 +34,7 @@
       <Label layoutX="227.0" layoutY="150.0" text="Username" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="319.0" AnchorPane.topAnchor="150.0" />
       <Label layoutX="227.0" layoutY="193.0" text="Password" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="193.0" />
       <Label layoutX="227.0" layoutY="243.0" text="Confirm Password" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="243.0" />
-      <Button fx:id="registerAccountBtn" layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#registerAccClicked" text="Register Account" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="247.0" AnchorPane.topAnchor="353.0" />
+      <Button fx:id="registerAccountBtn" layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#registerAccClicked" style="-fx-background-color: teal;" text="Register Account" textFill="GOLD" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="247.0" AnchorPane.topAnchor="353.0" />
       <Label fx:id="regErrorLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="115.0" prefHeight="35.0" prefWidth="600.0" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="115.0" />
       <Label layoutX="228.0" layoutY="297.0" text="Card Number" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="297.0" />
    </children>

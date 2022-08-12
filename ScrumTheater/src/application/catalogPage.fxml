@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <AnchorPane prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="scrumLabel" layoutY="6.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Label fx:id="scrumLabel" layoutY="6.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" textFill="GOLD" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="36.0" />
                </font>
@@ -21,27 +21,27 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Button fx:id="accBtn" layoutX="394.0" layoutY="9.0" mnemonicParsing="false" onAction="#accountClicked" text="Account" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="10.0" />
+            <Button fx:id="accBtn" layoutX="394.0" layoutY="9.0" mnemonicParsing="false" onAction="#accountClicked" style="-fx-background-color: teal;" text="Account" textFill="GOLD" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="10.0" />
             <TextField layoutX="454.0" layoutY="9.0" promptText="Search" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
          </children>
       </AnchorPane>
-      <ToolBar layoutY="80.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+      <ToolBar layoutY="80.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
         <items>
-          <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" text="Home">
+          <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Home" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font></Button>
-            <Button fx:id="catalogBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" text="Catalog">
+            <Button fx:id="catalogBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Catalog" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font></Button>
-            <Button fx:id="ticketBtn" layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" text="Tickets">
+            <Button fx:id="ticketBtn" layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Tickets" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font></Button>
         </items>
       </ToolBar>
-      <ListView fx:id="catalogListView" layoutY="121.0" prefHeight="245.0" prefWidth="600.0" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="121.0" />
-      <Button layoutX="201.0" layoutY="374.0" mnemonicParsing="false" onAction="#movieSelected" prefHeight="25.0" prefWidth="199.0" text="Select" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="200.0" />
+      <ListView fx:id="catalogListView" layoutY="121.0" prefHeight="245.0" prefWidth="600.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="121.0" />
+      <Button layoutX="201.0" layoutY="374.0" mnemonicParsing="false" onAction="#movieSelected" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: teal;" text="Select" textFill="GOLD" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="200.0" />
    </children>
 </AnchorPane>

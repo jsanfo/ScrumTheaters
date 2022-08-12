@@ -12,32 +12,35 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
    <children>
-      <ToolBar layoutY="80.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+      <ToolBar layoutY="80.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <items>
-            <Button mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" text="Home">
+            <Button mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Home" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" text="Catalog">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Catalog" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" text="Tickets">
+            <Button layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Tickets" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
          </items>
       </ToolBar>
-      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="41.0" layoutY="54.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Label layoutX="41.0" layoutY="54.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" textFill="GOLD" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="36.0" />
                </font>
@@ -45,13 +48,13 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Button layoutX="725.0" layoutY="10.0" mnemonicParsing="false" onAction="#accountClicked" text="Account" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="10.0" />
+            <Button layoutX="725.0" layoutY="10.0" mnemonicParsing="false" onAction="#accountClicked" style="-fx-background-color: teal;" text="Account" textFill="GOLD" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="10.0" />
             <TextField layoutX="785.0" layoutY="10.0" promptText="Search" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="125.0" prefHeight="35.0" prefWidth="948.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+      <AnchorPane layoutY="125.0" prefHeight="35.0" prefWidth="948.0" style="-fx-background-color: orange;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <children>
-            <Label layoutX="14.0" layoutY="5.0" text="Popular Movies">
+            <Label layoutX="14.0" layoutY="5.0" style="-fx-background-color: orange;" text="Popular Movies">
                <font>
                   <Font size="18.0" />
                </font>
@@ -116,9 +119,9 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="67.0" prefWidth="964.0">
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="67.0" prefWidth="964.0" style="-fx-background-color: teal;">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#BG7Clicked" prefHeight="39.0" prefWidth="182.0" text="Big Guy 7">
+                        <Button mnemonicParsing="false" onAction="#BG7Clicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: gold;" text="Big Guy 7" textFill="#df8d00">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -126,7 +129,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#FFClicked" prefHeight="39.0" prefWidth="182.0" text="Finding Fish">
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#FFClicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: gold;" text="Finding Fish" textFill="#0047ab">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -134,7 +137,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="196.0" layoutY="10.0" mnemonicParsing="false" onAction="#RevengersClicked" prefHeight="39.0" prefWidth="182.0" text="Mravel's The Revengers">
+                        <Button layoutX="196.0" layoutY="10.0" mnemonicParsing="false" onAction="#RevengersClicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: gold;" text="Mravel's The Revengers" textFill="#890089">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -142,7 +145,7 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="382.0" layoutY="10.0" mnemonicParsing="false" onAction="#SquidClicked" prefHeight="39.0" prefWidth="182.0" text="Squidnado">
+                        <Button layoutX="382.0" layoutY="10.0" mnemonicParsing="false" onAction="#SquidClicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: gold;" text="Squidnado" textFill="GREY">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -150,20 +153,45 @@
                               <Insets right="4.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="568.0" layoutY="10.0" mnemonicParsing="false" onAction="#NeptunianClicked" prefHeight="39.0" prefWidth="182.0" text="The Neptunian">
+                        <Button layoutX="568.0" layoutY="10.0" mnemonicParsing="false" onAction="#NeptunianClicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: gold;" text="The Neptunian" textFill="ROYALBLUE">
                            <font>
                               <Font size="18.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="4.0" />
+                           </HBox.margin>
                         </Button>
-                        <Button layoutX="754.0" layoutY="10.0" mnemonicParsing="false" onAction="#ARClicked" prefHeight="39.0" prefWidth="182.0" text="Atlantic Rim">
+                        <Button layoutX="754.0" layoutY="10.0" mnemonicParsing="false" onAction="#ARClicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: gold;" text="Atlantic Rim" textFill="#373737">
                            <font>
                               <Font size="18.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="4.0" />
+                           </HBox.margin>
                         </Button>
-                        <Button layoutX="936.0" layoutY="10.0" mnemonicParsing="false" onAction="#QAClicked" prefHeight="39.0" prefWidth="182.0" text="The Quick and The Angry">
+                        <Button layoutX="936.0" layoutY="10.0" mnemonicParsing="false" onAction="#QAClicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: gold;" text="The Quick and The Angry">
                            <font>
                               <Font size="18.0" />
                            </font>
+                           <textFill>
+                              <RadialGradient centerX="0.24229069428296873" centerY="0.5" radius="0.7018348448867099">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="1.0" green="0.040740739554166794" blue="0.040740739554166794" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                           <HBox.margin>
+                              <Insets right="4.0" />
+                           </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
