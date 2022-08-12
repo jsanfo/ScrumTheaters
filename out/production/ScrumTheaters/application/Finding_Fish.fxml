@@ -24,7 +24,7 @@
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>
-      <Label alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" disable="true" layoutX="56.0" layoutY="162.0" prefHeight="135.0" prefWidth="480.0" text="When Marvin loses his son Memo after being kidnappedby humans, he sets out on a journey to find his son withthe help of Lory, a fish he meets along the way. However,during the journey, he realizes his son is not the onlyfish that he has to find.&#10;&#10;&#10;" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="162.0">
+      <Label alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" layoutX="56.0" layoutY="162.0" prefHeight="135.0" prefWidth="480.0" text="When Marvin loses his son Memo after being kidnappedby humans, he sets out on a journey to find his son withthe help of Lory, a fish he meets along the way. However,during the journey, he realizes his son is not the onlyfish that he has to find.&#10;&#10;&#10;" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="162.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

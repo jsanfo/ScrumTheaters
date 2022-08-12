@@ -16,7 +16,8 @@ public class User
     //Password String
     private String password;
     private String cardNum;
-    private List<String> tickets;
+    private List<String> tickets = new ArrayList<>();
+    private List<String> cart = new ArrayList<>();
 
     // Constructors //
 
@@ -134,4 +135,9 @@ public class User
         overwriteLine(cardNum, newCardNum);
         cardNum = newCardNum;
     }
+
+    public void addToCart(List<String> selections){
+        cart.addAll(selections);
+    }
+
 }

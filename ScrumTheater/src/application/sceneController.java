@@ -77,6 +77,20 @@ public class sceneController implements Initializable
 	@FXML
 	private ListView<String> pastTicketListView = new ListView<>();
 
+	@FXML
+	private ChoiceBox<String> eightPM = new ChoiceBox<>();
+
+	@FXML
+	private ChoiceBox<String> eightThirPM  = new ChoiceBox<>();
+	@FXML
+	private ChoiceBox<String> ninePM  = new ChoiceBox<>();
+	@FXML
+	private ChoiceBox<String> nineThirPM  = new ChoiceBox<>();
+	@FXML
+	private ChoiceBox<String> tenPM  = new ChoiceBox<>();
+	@FXML
+	private ChoiceBox<String> tenThirPM  = new ChoiceBox<>();
+
 	/**
 	 * Default constructor for sceneController class
 	 * 	calls getUserPasses method to initialize the TreeMap.
@@ -100,6 +114,14 @@ public class sceneController implements Initializable
 	{
 		try {
 			catalogListView.getItems().addAll(getMovieList());
+
+			eightPM.getItems().addAll(getAmounts());
+			eightThirPM.getItems().addAll(getAmounts());
+			ninePM.getItems().addAll(getAmounts());
+			nineThirPM.getItems().addAll(getAmounts());
+			tenPM.getItems().addAll(getAmounts());
+			tenThirPM.getItems().addAll(getAmounts());
+
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -350,6 +372,36 @@ public class sceneController implements Initializable
 		goTo(event, "showTimes.fxml" );
 	}
 
+	public void continueCartClicked (ActionEvent event){
+		List<String> selections = new ArrayList<>();
+
+		if (eightPM.getValue() != null && !Objects.equals(eightPM.getValue(), "0")){
+			selections.add(eightPM.getValue());
+		}
+
+		if (eightThirPM.getValue() != null && !Objects.equals(eightThirPM.getValue(), "0")){
+			selections.add(eightThirPM.getValue());
+		}
+		if (ninePM.getValue() != null && !Objects.equals(ninePM.getValue(), "0")){
+			selections.add(ninePM.getValue());
+		}
+		if (nineThirPM.getValue() != null && !Objects.equals(nineThirPM.getValue(), "0")){
+			selections.add(nineThirPM.getValue());
+		}
+		if (tenPM.getValue() != null && !Objects.equals(tenPM.getValue(), "0")){
+			selections.add(tenPM.getValue());
+		}
+		if (tenThirPM.getValue() != null && !Objects.equals(tenThirPM.getValue(), "0")){
+			selections.add(tenThirPM.getValue());
+		}
+
+		if(!selections.isEmpty()){
+			currentUser.addToCart(selections);
+
+		}
+
+	}
+
 	public void ARClicked(ActionEvent event) throws IOException {
 		goTo(event, "Atlantic_Rim.fxml");
 	}
@@ -407,6 +459,19 @@ public class sceneController implements Initializable
 		Collections.sort(movieList);
 
 		return movieList;
+	}
+
+	private List<String> getAmounts (){
+		List<String> amounts = new ArrayList<>();
+
+		amounts.add("0");
+		amounts.add("1");
+		amounts.add("2");
+		amounts.add("3");
+
+		return amounts;
+
+
 	}
 
 	/**
