@@ -396,6 +396,8 @@ public class sceneController implements Initializable
 		}
 
 		if(!selections.isEmpty()){
+
+			System.out.println(selections);
 			currentUser.addToCart(selections);
 
 		}

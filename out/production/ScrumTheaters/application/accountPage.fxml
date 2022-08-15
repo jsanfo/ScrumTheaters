@@ -28,6 +28,11 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <Button layoutX="192.0" layoutY="10.0" mnemonicParsing="false" onAction="#accountClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Account" textFill="GOLD">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </items>
       </ToolBar>
       <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -47,21 +52,20 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="185.0" text="General">
+      <Label layoutX="141.0" layoutY="179.0" text="Account Info">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="356.0" layoutY="192.0" text="Payment History">
+      <Label layoutX="361.0" layoutY="228.0" text="Payment History">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="viewInfoBtn" layoutX="119.0" layoutY="314.0" mnemonicParsing="false" onAction="#viewInfoClicked" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: teal;" text="View Info" textFill="GOLD" />
-      <Button fx:id="editProfBtn" disable="true" layoutX="119.0" layoutY="314.0" mnemonicParsing="false" onAction="#editProfileClicked" prefHeight="25.0" prefWidth="87.0" text="Edit Profile" visible="false" />
-      <Button fx:id="finalizeBtn" disable="true" layoutX="119.0" layoutY="314.0" mnemonicParsing="false" onAction="#finalizeClicked" prefHeight="25.0" prefWidth="87.0" text="Finalize!" visible="false" />
-      <Button layoutX="396.0" layoutY="225.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: teal;" text="Transactions" textFill="GOLD" />
-      <Button layoutX="396.0" layoutY="257.0" mnemonicParsing="false" style="-fx-background-color: teal;" text="Edit Payment Info" textFill="GOLD" />
+      <Button fx:id="viewInfoBtn" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#viewInfoClicked" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: teal;" text="View Info" textFill="GOLD" />
+      <Button fx:id="editProfBtn" disable="true" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#editProfileClicked" prefHeight="25.0" prefWidth="87.0" text="Edit Profile" visible="false" />
+      <Button fx:id="finalizeBtn" disable="true" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#finalizeClicked" prefHeight="25.0" prefWidth="87.0" text="Finalize!" visible="false" />
+      <Button layoutX="372.0" layoutY="264.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: teal;" text="Transactions" textFill="GOLD" />
       <Label layoutX="64.0" layoutY="216.0" text="Username:" />
       <Label layoutX="66.0" layoutY="248.0" text="Password:" />
       <TextField fx:id="accTextField" disable="true" layoutX="134.0" layoutY="212.0" prefHeight="25.0" prefWidth="116.0" />
