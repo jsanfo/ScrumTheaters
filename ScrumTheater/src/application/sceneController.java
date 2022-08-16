@@ -404,6 +404,12 @@ public class sceneController implements Initializable
 
 	}
 
+	public void purchaseCLicked (ActionEvent event){
+
+	}
+
+
+
 	public void ARClicked(ActionEvent event) throws IOException {
 		goTo(event, "Atlantic_Rim.fxml");
 	}
