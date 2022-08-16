@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.loginRegController">
    <children>
       <AnchorPane prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -33,8 +33,8 @@
       </Label>
       <TextField fx:id="userField" layoutX="233.0" layoutY="188.0" prefHeight="25.0" prefWidth="135.0" promptText="username" />
       <PasswordField fx:id="passwordField" layoutX="233.0" layoutY="226.0" prefHeight="25.0" prefWidth="135.0" promptText="password" />
-      <Button fx:id="loginButton" layoutX="251.0" layoutY="263.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: teal;" text="Log In" textFill="GOLD" />
-      <Button fx:id="createAccountButton" layoutX="251.0" layoutY="295.0" mnemonicParsing="false" onAction="#createAccClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: teal;" text="Create Account" textFill="GOLD" />
+      <Button layoutX="251.0" layoutY="263.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: teal;" text="Log In" textFill="GOLD" />
+      <Button layoutX="251.0" layoutY="295.0" mnemonicParsing="false" onAction="#createAccClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: teal;" text="Create Account" textFill="GOLD" />
       <Label fx:id="errorLbl" alignment="CENTER" contentDisplay="CENTER" layoutY="153.0" prefHeight="31.0" prefWidth="600.0" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>

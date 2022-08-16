@@ -30,9 +30,8 @@ public class sceneController implements Initializable
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	//Treemap for Usernames & Passwords
-		//This is the only place passwords are stored outside of User's account file.
-	private TreeMap<String, String> userPasses = new TreeMap<>();
+
+	private TreeMap<String, String> userPasses;
 	private static User currentUser;
 
 	//Account Page
@@ -94,17 +93,6 @@ public class sceneController implements Initializable
 	private ListView<String> pastTicketListView = new ListView<>();
 
 
-
-	/**
-	 * Default constructor for sceneController class
-	 * 	calls getUserPasses method to initialize the TreeMap.
-	 * @throws FileNotFoundException
-	 */
-	public sceneController() throws FileNotFoundException
-	{
-		getUserPasses();
-	}
-
 	// Initialization //
 
 	/**
@@ -129,6 +117,12 @@ public class sceneController implements Initializable
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public void initData(User current, TreeMap<String, String> UP)
+	{
+		currentUser = current;
+		userPasses = UP;
 	}
 
 
@@ -188,43 +182,13 @@ public class sceneController implements Initializable
 		goTo(event, "accountPage.fxml");
 	}
 
-	/**
-	 * When login button is clicked, open login page
-	 * @param event Button clicked
-	 * @throws IOException
-	 */
-	public void loginClicked(ActionEvent event) throws IOException
-	{
 
-		String username = userField.getText();
-		String password = passwordField.getText();
-
-
-		if (!checkUserIsRegistered(username))
-		{
-			errorLbl.setText("Username provided has no registered account");
-			return;
-		}
-
-		if (!checkPasswordCorrect(username, password))
-		{
-			errorLbl.setText("Password does not match username provided");
-		}
-		else
-		{
-			currentUser = new User(new File("ScrumTheater/src/resources/text/accountFiles/" + username));
-			homeClicked(event);
-		}
-	}
 	/**
 	 * When create account button is clicked, open the registration page.
 	 * @param event Button clicked
 	 * @throws IOException
 	 */
-	public void createAccClicked(ActionEvent event) throws IOException
-	{
-		goTo(event, "registrationPage.fxml");
-	}
+
 
 	/**
 	 * 	Allows User to see their username,
@@ -311,59 +275,6 @@ public class sceneController implements Initializable
 		accPassField.setText("");
 		accCardField.setDisable(true);
 		accCardField.setText("");
-	}
-
-	/**
-	 * Registers the user's new account with the parameters provided in the
-	 * 	text field and password fields.
-	 * @param event Button Clicked
-	 * @throws IOException
-	 */
-	public void registerAccClicked(ActionEvent event) throws IOException
-	{
-		if (userPasses.containsKey(regUserField.getText()))
-		{
-			regErrorLbl.setText("This username is already in use");
-			return;
-		}
-
-		if (!cardNumField.getText().matches("[0-9]+"))
-		{
-			regErrorLbl.setText("Invalid Card Number: Numbers only");
-			return;
-		}
-		else if (cardNumField.getText().length() != 16)
-		{
-			regErrorLbl.setText("Invalid Card Number: Must Be 16 Characters");
-			return;
-		}
-
-		if (Objects.equals(regUserField.getText(), regPasswordField.getText()))
-		{
-			regErrorLbl.setText("Username cannot be the same as password");
-			return;
-		}
-		else if (Objects.equals(regUserField.getText(), cardNumField.getText()))
-		{
-			regErrorLbl.setText("Username cannot be the same as Card Number");
-			return;
-		}
-		else if (Objects.equals(regPasswordField.getText(), cardNumField.getText()))
-		{
-			regErrorLbl.setText("Password cannot be the same as Card Number");
-			return;
-		}
-
-		if (Objects.equals(regPasswordField.getText(), confirmPasswordField.getText()))
-		{
-
-			currentUser = new User(regUserField.getText(),
-					regPasswordField.getText(),
-					cardNumField.getText());
-			currentUser.createAccountFile();
-			goTo(event, "homePage.fxml");
-		}
-
 	}
 
 	/**
@@ -579,64 +490,7 @@ public class sceneController implements Initializable
 
 	}
 
-	/**
-	 * Checks if the user is already registered.
-	 * 	If they are, return true;
-	 * @param username To check across the Treemap of Usernames and Passwords.
-	 * @return True if they are registered with this username already
-	 * 			False if they are not.
-	 */
-	private boolean checkUserIsRegistered(String username)
-	{
-		boolean isRegistered = false;
-
-		for (int i = 0; i < userPasses.size(); i++)
-		{
-			if (userPasses.containsKey(username))
-				isRegistered = true;
-		}
-
-		return isRegistered;
-	}
-
-	/**
-	 * Checks if the password passed in is part of the key, value pair with the username.
-	 * @param username The key of the userPasses Treemap
-	 * @param password The value of the userPasses Treemap
-	 * @return True if these two are paired,
-	 * 			False if they are not.
-	 */
-	private boolean checkPasswordCorrect(String username, String password)
-	{
-		boolean isCorrect = false;
-
-		String check = userPasses.get(username);
-
-		if (Objects.equals(check, password))
-			isCorrect = true;
-
-		return isCorrect;
-	}
-
-	/**
-	 * Gets the username and password from every account file
-	 * 	and puts it in the userPasses Treemap as a key, value pair
-	 * @throws FileNotFoundException
-	 */
-	private void getUserPasses() throws FileNotFoundException {
-		File accountFolder = new File("ScrumTheater/src/resources/text/accountFiles");
-		List<File> files = List.of(Objects.requireNonNull(accountFolder.listFiles()));
 
 
 
-		for (int i = 0; i < files.size(); i++)
-		{
-			Scanner sc = new Scanner(files.get(i));
-			String user = sc.nextLine();
-			String pass = sc.nextLine();
-
-			userPasses.put(user, pass);
-			sc.close();
-		}
-	}
 }
