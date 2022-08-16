@@ -11,12 +11,15 @@ import java.util.*;
 
 public class User
 {
-    // Username String
     private String userName;
-    //Password String
     private String password;
+    //Card Number String
     private String cardNum;
-    private List<String> tickets = new ArrayList<>();
+    //Current tickets (Tickets for movies whose showtime is now or in the future)
+    private List<String> currentTickets = new ArrayList<>();
+    //Past Tickets (Tickets for movies whose showtime has already passed)
+    private List<String> pastTickets = new ArrayList<>();
+    //List of tickets currently in User's cart.
     private List<String> cart = new ArrayList<>();
 
     // Constructors //
@@ -66,10 +69,21 @@ public class User
             fos.close();
         }
     }
+
+    /**
+     * @return String to the path of the User's account file.
+     */
     public String getFilePath()
     {
         return "ScrumTheater/src/resources/text/accountFiles/" + userName;
     }
+
+    /**
+     * Overwrites the old line found in the User's account file.
+     * @param oldLine Old line to be found
+     * @param newLine New line to replace the old
+     * @throws IOException
+     */
     public void overwriteLine(String oldLine, String newLine) throws IOException {
         Path path = Paths.get(getFilePath());
         List<String> lines = new ArrayList<>(Files.readAllLines(path));
@@ -85,6 +99,11 @@ public class User
 
         Files.write(path, lines);
     }
+
+    /**
+     * Gives the User's account file a new name
+     * @param newName new name for the file
+     */
     public void renameFile(String newName)
     {
         Path oldPath = Paths.get(getFilePath());
@@ -96,6 +115,11 @@ public class User
         oldf.renameTo(newf);
     }
 
+    /**
+     * Reads through the account file and parses the username, password, and card number out.
+     * @param f File to read through
+     * @throws FileNotFoundException
+     */
     private void readAccountFile(File f) throws FileNotFoundException {
         LinkedList<String> lines = new LinkedList<>();
         Scanner sc = new Scanner(f);
@@ -110,32 +134,61 @@ public class User
         }
         sc.close();
     }
+
+    /**
+     * @return Username of the User
+     */
     public String getUserName()
     {
         return userName;
     }
+
+    /**
+     * @return Card Number of the User
+     */
     public String getCardNum()
     {
         return cardNum;
     }
 
+    /**
+     * Overwrites the username line in the file, renames the file to the new name, changes the username variable to new.
+     * @param newUserName New username to set to
+     * @throws IOException
+     */
     public void setUserName(String newUserName) throws IOException
     {
         overwriteLine(userName, newUserName);
         renameFile(newUserName);
         userName = newUserName;
     }
+
+    /**
+     * Overwrites password line, sets password variable to new password.
+     * @param newPassword New password to set to
+     * @throws IOException
+     */
     public void setPassword(String newPassword) throws IOException
     {
         overwriteLine(password, newPassword);
         password = newPassword;
     }
+
+    /**
+     * Overwrites Card Number line, sets cardNum variable to new one.
+     * @param newCardNum New card number to set to
+     * @throws IOException
+     */
     public void setCardNum(String newCardNum) throws IOException
     {
         overwriteLine(cardNum, newCardNum);
         cardNum = newCardNum;
     }
 
+    /**
+     * Adds items in list passed in to cart List
+     * @param selections List of Strings passed in
+     */
     public void addToCart(List<String> selections){
         cart.addAll(selections);
     }
