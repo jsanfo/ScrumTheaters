@@ -411,7 +411,7 @@ public class sceneController implements Initializable
 	 * If there are selection(s), take User to the cart with those selections added to it.
 	 * @param event
 	 */
-	public void continueCartClicked (ActionEvent event){
+	public void continueCartClicked (ActionEvent event) throws IOException {
 		List<String> selections = new ArrayList<>();
 
 		if (eightPM.getValue() != null && !Objects.equals(eightPM.getValue(), "0")){
@@ -435,10 +435,13 @@ public class sceneController implements Initializable
 		}
 
 		if(!selections.isEmpty()){
-
 			System.out.println(selections);
 			currentUser.addToCart(selections);
-
+			goTo(event, "cartPage.fxml");
+		}
+		else
+		{
+			errorLbl.setText("Please Make A Selection Before Continuing");
 		}
 
 	}
