@@ -30,17 +30,12 @@ public class sceneController implements Initializable
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	//Treemap for Usernames & Passwords
+		//This is the only place passwords are stored outside of User's account file.
 	private TreeMap<String, String> userPasses = new TreeMap<>();
 	private static User currentUser;
 
-	// Login Page username TextField
-	@FXML
-	private TextField userField;
-	// Registration Page username TextField
-	@FXML
-	private TextField regUserField;
-	@FXML
-	private TextField cardNumField;
+	//Account Page
 	@FXML
 	private TextField accTextField;
 	@FXML
@@ -53,33 +48,30 @@ public class sceneController implements Initializable
 	private Button editProfBtn;
 	@FXML
 	private Button viewInfoBtn;
-	// Login Page password PasswordField
+
+	//Registration Page
 	@FXML
-	private PasswordField passwordField;
-	// Registration Page password PasswordField
+	private TextField regUserField;
+	@FXML
+	private TextField cardNumField;
 	@FXML
 	private PasswordField regPasswordField;
-	// Registration Page password confirmation PasswordField
 	@FXML
 	private PasswordField confirmPasswordField;
-	// Login Page error label Label
-	@FXML
-	private Label errorLbl;
-	// Registration Page error label Label
 	@FXML
 	private Label regErrorLbl;
-	// Catalog Page Listview
-	@FXML
-	private ListView<String> catalogListView = new ListView<>();
-	// Ticket Page List View
-	@FXML
-	private ListView<String> purchasedTicketListView = new ListView<>();
-	@FXML
-	private ListView<String> pastTicketListView = new ListView<>();
 
+	//Login Page
+	@FXML
+	private Label errorLbl;
+	@FXML
+	private TextField userField;
+	@FXML
+	private PasswordField passwordField;
+
+	//Showtimes Page
 	@FXML
 	private ChoiceBox<String> eightPM = new ChoiceBox<>();
-
 	@FXML
 	private ChoiceBox<String> eightThirPM  = new ChoiceBox<>();
 	@FXML
@@ -90,6 +82,18 @@ public class sceneController implements Initializable
 	private ChoiceBox<String> tenPM  = new ChoiceBox<>();
 	@FXML
 	private ChoiceBox<String> tenThirPM  = new ChoiceBox<>();
+
+	//Catalog Page
+	@FXML
+	private ListView<String> catalogListView = new ListView<>();
+
+	//Ticket Page
+	@FXML
+	private ListView<String> purchasedTicketListView = new ListView<>();
+	@FXML
+	private ListView<String> pastTicketListView = new ListView<>();
+
+
 
 	/**
 	 * Default constructor for sceneController class
@@ -221,6 +225,13 @@ public class sceneController implements Initializable
 	{
 		goTo(event, "registrationPage.fxml");
 	}
+
+	/**
+	 * 	Allows User to see their username,
+	 * 	Amount of chars in their password,
+	 * 	Amount of chars in their Card Number
+	 * @param event
+	 */
 	public void viewInfoClicked(ActionEvent event)
 	{
 		accTextField.setText(currentUser.getUserName());
@@ -233,6 +244,11 @@ public class sceneController implements Initializable
 		editProfBtn.setDisable(false);
 		editProfBtn.setVisible(true);
 	}
+
+	/**
+	 * Allows user to edit their username, password, and Card Number
+	 * @param event
+	 */
 	public void editProfileClicked(ActionEvent event)
 	{
 		accTextField.setDisable(false);
@@ -245,6 +261,13 @@ public class sceneController implements Initializable
 		finalizeBtn.setDisable(false);
 		finalizeBtn.setVisible(true);
 	}
+
+	/**
+	 * Checks that requirements are met, if not displays why in a label
+	 * Sets username, password, and card number found in text and pass fields to the User's
+	 * 	matching variables.
+	 * @throws IOException
+	 */
 	public void finalizeClicked() throws IOException {
 		if (Objects.equals(accTextField.getText(), accPassField.getText()))
 		{
@@ -343,6 +366,12 @@ public class sceneController implements Initializable
 
 	}
 
+	/**
+	 * Sets the movie that was selected as the choice.  Does nothing if no movie was
+	 * selected
+	 * @param event
+	 * @throws IOException
+	 */
 	public void movieSelected(ActionEvent event) throws IOException {
 		String movie="";
 		ObservableList<String> movies;
@@ -368,10 +397,20 @@ public class sceneController implements Initializable
 
 	}
 
+	/**
+	 * Takes User to showtimes of this movie.
+	 * @param event
+	 * @throws IOException
+	 */
+
 	public void showTimes(ActionEvent event) throws IOException {
 		goTo(event, "showTimes.fxml" );
 	}
 
+	/**
+	 * If there are selection(s), take User to the cart with those selections added to it.
+	 * @param event
+	 */
 	public void continueCartClicked (ActionEvent event){
 		List<String> selections = new ArrayList<>();
 
@@ -404,30 +443,74 @@ public class sceneController implements Initializable
 
 	}
 
+	/**
+	 *
+	 * @param event
+	 */
 	public void purchaseCLicked (ActionEvent event){
 
 	}
 
 
-
+	/**
+	 * Takes the user to Atlantic Rim's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void ARClicked(ActionEvent event) throws IOException {
 		goTo(event, "Atlantic_Rim.fxml");
 	}
+
+	/**
+	 * Takes the user to Big Guy 7's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void BG7Clicked(ActionEvent event) throws IOException {
 		goTo(event, "BigGuy7.fxml");
 	}
+
+	/**
+	 * Takes the user to Finding Fish's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void FFClicked(ActionEvent event) throws IOException {
 		goTo(event, "Finding_Fish.fxml");
 	}
+
+	/**
+	 * Takes the user to The Quick and The Angry's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void QAClicked(ActionEvent event) throws IOException {
 		goTo(event, "QuickAndAngry.fxml");
 	}
+
+	/**
+	 * Takes the user to Squidnado's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void SquidClicked(ActionEvent event) throws IOException {
 		goTo(event, "Squidnado.fxml");
 	}
+
+	/**
+	 * Takes the user to The Neptunian's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void NeptunianClicked(ActionEvent event) throws IOException {
 		goTo(event, "TheNeptunian.fxml");
 	}
+
+	/**
+	 * Takes the user to The Revengers' description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void RevengersClicked(ActionEvent event) throws IOException {
 		goTo(event, "TheRevengers.fxml");
 	}
@@ -435,6 +518,13 @@ public class sceneController implements Initializable
 
 	// Helper Methods //
 
+	/**
+	 * Sets the scene to the .fxml file whose name was passed in.
+	 * 	Easy implementation for a button to "Go To" a page.
+	 * @param event
+	 * @param fileName Name of the file to go to
+	 * @throws IOException
+	 */
 	private void goTo(ActionEvent event, String fileName) throws IOException
 	{
 		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fileName)));
@@ -469,6 +559,10 @@ public class sceneController implements Initializable
 		return movieList;
 	}
 
+	/**
+	 * Similar to getMovieList, gets amounts to add to the choice boxes in the Show Times page.
+	 * @return
+	 */
 	private List<String> getAmounts (){
 		List<String> amounts = new ArrayList<>();
 
