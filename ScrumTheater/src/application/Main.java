@@ -1,8 +1,4 @@
-//Nova was here
-//Miranda
 
-//Nova
-//Miranda was here
 package application;
 	
 import javafx.application.Application;
