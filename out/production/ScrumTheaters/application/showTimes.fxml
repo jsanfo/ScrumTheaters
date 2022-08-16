@@ -58,6 +58,11 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="419.0" layoutY="331.0" mnemonicParsing="false" onAction="#continueCartClicked" text="Continue to Cart" />
+      <Button layoutX="448.0" layoutY="331.0" mnemonicParsing="false" onAction="#continueCartClicked" text="Continue to Cart" />
+      <Label layoutX="214.0" layoutY="312.0" prefHeight="64.0" prefWidth="188.0" text="Showtimes" textAlignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,5 +1,5 @@
 //Nova
-
+//Miranda
 package application;
 	
 import javafx.application.Application;
@@ -11,7 +11,7 @@ import javafx.scene.Scene;
 
 import java.io.File;
 import java.util.Objects;
-,miranda
+
 
 public class Main extends Application {
 	@Override
