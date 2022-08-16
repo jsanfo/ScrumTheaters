@@ -133,6 +133,7 @@ public class loginRegController implements Initializable {
                     passwordField.getText(),
                     cardNumField.getText());
             currentUser.createAccountFile();
+            getUserPasses();
             continueHome(event);
         }
 

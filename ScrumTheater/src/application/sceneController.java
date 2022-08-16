@@ -2,15 +2,10 @@ package application;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,8 +15,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -31,42 +24,24 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 
-	private TreeMap<String, String> userPasses;
+	private static TreeMap<String, String> userPasses = new TreeMap<>();
 	private static User currentUser;
 
 	//Account Page
 	@FXML
-	private TextField accTextField;
+	private TextField userField;
 	@FXML
-	private TextField accPassField;
+	private TextField passField;
 	@FXML
-	private TextField accCardField;
+	private TextField cardField;
 	@FXML
 	private Button finalizeBtn;
 	@FXML
 	private Button editProfBtn;
 	@FXML
 	private Button viewInfoBtn;
-
-	//Registration Page
-	@FXML
-	private TextField regUserField;
-	@FXML
-	private TextField cardNumField;
-	@FXML
-	private PasswordField regPasswordField;
-	@FXML
-	private PasswordField confirmPasswordField;
-	@FXML
-	private Label regErrorLbl;
-
-	//Login Page
 	@FXML
 	private Label errorLbl;
-	@FXML
-	private TextField userField;
-	@FXML
-	private PasswordField passwordField;
 
 	//Showtimes Page
 	@FXML
@@ -198,9 +173,9 @@ public class sceneController implements Initializable
 	 */
 	public void viewInfoClicked(ActionEvent event)
 	{
-		accTextField.setText(currentUser.getUserName());
-		accPassField.setText(userPasses.get(currentUser.getUserName()));
-		accCardField.setText(currentUser.getCardNum());
+		userField.setText(currentUser.getUserName());
+		passField.setText(userPasses.get(currentUser.getUserName()));
+		cardField.setText(currentUser.getCardNum());
 
 		viewInfoBtn.setDisable(true);
 		viewInfoBtn.setVisible(false);
@@ -215,9 +190,9 @@ public class sceneController implements Initializable
 	 */
 	public void editProfileClicked(ActionEvent event)
 	{
-		accTextField.setDisable(false);
-		accPassField.setDisable(false);
-		accCardField.setDisable(false);
+		userField.setDisable(false);
+		passField.setDisable(false);
+		cardField.setDisable(false);
 
 		editProfBtn.setDisable(true);
 		editProfBtn.setVisible(false);
@@ -233,35 +208,35 @@ public class sceneController implements Initializable
 	 * @throws IOException
 	 */
 	public void finalizeClicked() throws IOException {
-		if (Objects.equals(accTextField.getText(), accPassField.getText()))
+		if (Objects.equals(userField.getText(), passField.getText()))
 		{
 			errorLbl.setText("Username cannot be the same as password");
 			return;
 		}
-		else if (Objects.equals(accTextField.getText(), accCardField.getText()))
+		else if (Objects.equals(userField.getText(), cardField.getText()))
 		{
 			errorLbl.setText("Username cannot be the same as Card Number");
 			return;
 		}
-		else if (Objects.equals(accPassField.getText(), accCardField.getText()))
+		else if (Objects.equals(passField.getText(), cardField.getText()))
 		{
 			errorLbl.setText("Password cannot be the same as Card Number");
 			return;
 		}
 
-		if (accCardField.getText().length() != 16)
+		if (cardField.getText().length() != 16)
 		{
 			errorLbl.setText("Card Number must be 16 digits");
 			return;
 		}
-		else if (!accCardField.getText().matches("[0-9]+"))
+		else if (!cardField.getText().matches("[0-9]+"))
 		{
 			errorLbl.setText("Card Number must only contain numbers.");
 			return;
 		}
-		currentUser.setUserName(accTextField.getText());
-		currentUser.setPassword(accPassField.getText());
-		currentUser.setCardNum(accCardField.getText());
+		currentUser.setUserName(userField.getText());
+		currentUser.setPassword(passField.getText());
+		currentUser.setCardNum(cardField.getText());
 
 		finalizeBtn.setDisable(true);
 		finalizeBtn.setVisible(false);
@@ -269,12 +244,12 @@ public class sceneController implements Initializable
 		viewInfoBtn.setDisable(false);
 		viewInfoBtn.setVisible(true);
 
-		accTextField.setDisable(true);
-		accTextField.setText("");
-		accPassField.setDisable(true);
-		accPassField.setText("");
-		accCardField.setDisable(true);
-		accCardField.setText("");
+		userField.setDisable(true);
+		userField.setText("");
+		passField.setDisable(true);
+		passField.setText("");
+		cardField.setDisable(true);
+		cardField.setText("");
 	}
 
 	/**
