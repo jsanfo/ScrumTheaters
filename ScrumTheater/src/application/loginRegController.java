@@ -41,6 +41,11 @@ public class loginRegController implements Initializable {
 
     //Initialization//
 
+    /**
+     * Initializes the userpasses from the account files.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -81,6 +86,12 @@ public class loginRegController implements Initializable {
             continueHome(event);
         }
     }
+
+    /**
+     * Continues program to the Registration Page.
+     * @param event
+     * @throws IOException
+     */
     public void createAccClicked(ActionEvent event) throws IOException
     {
         continueTo(event, "registrationPage.fxml");
@@ -88,7 +99,7 @@ public class loginRegController implements Initializable {
     /**
      * Registers the user's new account with the parameters provided in the
      * 	text field and password fields.
-     * @param event Button Clicked
+     * @param event
      * @throws IOException
      */
     public void registerAccClicked(ActionEvent event) throws IOException
@@ -199,6 +210,12 @@ public class loginRegController implements Initializable {
             sc.close();
         }
     }
+
+    /**
+     * Continues to Home Page, calls sceneController's initdata function and passes the data.
+     * @param event
+     * @throws IOException
+     */
 
     private void continueHome(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));

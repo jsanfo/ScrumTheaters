@@ -72,7 +72,6 @@ public class sceneController implements Initializable
 
 	/**
 	 * Initializes the list view for the catalog.
-	 * 	Later, will initialize the list views for the previous and purchased tickets as well.
 	 * @param url
 	 * @param resourceBundle
 	 */
@@ -94,6 +93,11 @@ public class sceneController implements Initializable
 		}
 	}
 
+	/**
+	 * Initializes data after User logs in
+	 * @param current User instance for the current user.
+	 * @param UP Treemap for the usernames/passwords
+	 */
 	public void initData(User current, TreeMap<String, String> UP)
 	{
 		currentUser = current;
@@ -156,14 +160,6 @@ public class sceneController implements Initializable
 	{
 		goTo(event, "accountPage.fxml");
 	}
-
-
-	/**
-	 * When create account button is clicked, open the registration page.
-	 * @param event Button clicked
-	 * @throws IOException
-	 */
-
 
 	/**
 	 * 	Allows User to see their username,
@@ -333,7 +329,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
-	 *
+	 * Places tickets in the cart into the User's current ticket list.
+	 * 	Takes User to a confirmation page.
 	 * @param event
 	 */
 	public void purchaseCLicked (ActionEvent event){
