@@ -150,6 +150,52 @@ public class User
     {
         return cardNum;
     }
+    public List<String> getCart()
+    {
+        List<String> tix = cart;
+        List<Integer> amts = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        List<String> times = new ArrayList<>();
+
+        for (int i = 0; i < tix.size(); i++)
+        {
+            String strs[] = tix.get(i).split(",");
+
+            amts.add(Integer.parseInt(strs[0]));
+            names.add(strs[1]);
+            times.add(strs[2]);
+        }
+
+        for (int i = 0; i < names.size(); i++)
+        {
+            for (int j = 0; j < names.size(); j++)
+            {
+                if (i != j && names.get(i).equals(names.get(j)) && times.get(i).equals(times.get(j)))
+                {
+                    int newAmt = amts.get(i) + amts.get(j);
+                    cart.remove(amts.get(i) + "," + names.get(i) + "," + times.get(i));
+                    cart.remove(amts.get(j) + "," + names.get(j) + "," + times.get(j));
+                    cart.remove(newAmt + "," + names.get(i) + "," + times.get(i));
+                    cart.add(newAmt + "," + names.get(i) + "," + times.get(i));
+                }
+            }
+        }
+
+        return cart;
+    }
+    public List<String> getCartDisplayList()
+    {
+        List<String> displayList = new ArrayList<>();
+
+        for (int i = 0; i < cart.size(); i++)
+        {
+            String strs[] = cart.get(i).split(",");
+
+            displayList.add(strs[0] + " For: " + strs[1] + " at " + strs[2]);
+        }
+
+        return displayList;
+    }
 
     /**
      * Overwrites the username line in the file, renames the file to the new name, changes the username variable to new.

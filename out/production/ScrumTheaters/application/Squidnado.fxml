@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.movieController">
    <children>
       <ImageView fitHeight="474.0" fitWidth="722.0" layoutX="-122.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-1.0">
          <image>
@@ -24,7 +24,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Text layoutX="252.0" layoutY="170.0" smooth="false" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="4.0" text="Squidnado" textAlignment="CENTER">
+      <Text fx:id="movNameTxt" layoutX="252.0" layoutY="170.0" smooth="false" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="4.0" text="Squidnado" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
@@ -69,5 +69,6 @@
             </Label>
          </children>
       </AnchorPane>
+      <Button layoutX="228.0" layoutY="359.0" mnemonicParsing="false" onAction="#showTimes" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: teal;" text="See Showtimes" textFill="GOLD" />
    </children>
 </AnchorPane>

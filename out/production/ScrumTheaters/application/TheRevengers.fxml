@@ -11,25 +11,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.movieController">
    <children>
-      <ImageView fitHeight="372.0" fitWidth="722.0" layoutX="-122.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView blendMode="SRC_ATOP" fitHeight="347.0" fitWidth="747.0" layoutX="-92.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/images/descriptionBackGrounds/revengersBG.jpg" />
          </image>
       </ImageView>
-      <TextArea disable="true" layoutX="54.0" layoutY="248.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="169.0" prefWidth="478.0" text="&#10;&#10;" />
-      <Label layoutX="90.0" layoutY="196.0" prefHeight="190.0" prefWidth="419.0" text="Join Insect Man, Thunder Man, Special Agent, RoboMan, The Captain, and The Bulk, as they team up to stop the destruction of Earth from Mischief. Together with the power of friendship, they can overcome their most difficult challenge yet." textAlignment="CENTER" textFill="#1a2181" wrapText="true">
+      <TextArea disable="true" layoutX="61.0" layoutY="189.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.6" prefHeight="243.0" prefWidth="478.0" text="&#10;&#10;" />
+      <Label layoutX="91.0" layoutY="196.0" prefHeight="170.0" prefWidth="419.0" text="Join Insect Man, Thunder Man, Special Agent, RoboMan, The Captain, and The Bulk, as they team up to stop the destruction of Earth from Mischief. Together with the power of friendship, they can overcome their most difficult challenge yet." textAlignment="CENTER" textFill="#1b2eff" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Text fill="WHITE" layoutX="216.0" layoutY="197.0" smooth="false" stroke="#1a2181" strokeType="OUTSIDE" strokeWidth="4.0" text="The Revengers" textAlignment="CENTER">
+      <Text fx:id="movNameTxt" fill="WHITE" layoutX="235.0" layoutY="166.0" smooth="false" stroke="#1a2181" strokeType="OUTSIDE" strokeWidth="4.0" text="The Revengers" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Label layoutX="219.0" layoutY="378.0" text="Runtime: 150 minutes" textFill="#1a2181">
+      <Label layoutX="238.0" layoutY="357.0" text="Runtime: 150 minutes" textFill="#1b2eff">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -69,5 +69,6 @@
             </Label>
          </children>
       </AnchorPane>
+      <Button layoutX="225.0" layoutY="384.0" mnemonicParsing="false" onAction="#showTimes" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: teal;" text="See Showtimes" textFill="GOLD" />
    </children>
 </AnchorPane>

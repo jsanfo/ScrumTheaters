@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.movieController">
    <children>
       <ImageView fitHeight="350.0" fitWidth="599.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.9375" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <image>
@@ -28,7 +28,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Text fill="WHITE" layoutX="236.0" layoutY="185.0" stroke="#616161" strokeType="OUTSIDE" strokeWidth="3.0" text="Finding Fish">
+      <Text fx:id="movNameTxt" fill="WHITE" layoutX="244.0" layoutY="197.0" stroke="#616161" strokeType="OUTSIDE" strokeWidth="3.0" text="Finding Fish">
          <font>
             <Font size="21.0" />
          </font>

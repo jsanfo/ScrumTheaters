@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.cartController">
    <children>
       <ToolBar layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <items>
@@ -46,7 +46,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <ListView layoutX="14.0" layoutY="136.0" prefHeight="241.0" prefWidth="406.0" />
+      <ListView fx:id="cartListView" layoutX="14.0" layoutY="136.0" prefHeight="241.0" prefWidth="406.0" />
       <Button layoutX="471.0" layoutY="244.0" mnemonicParsing="false" text="Purchase" />
    </children>
 </AnchorPane>

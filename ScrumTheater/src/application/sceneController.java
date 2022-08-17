@@ -24,8 +24,9 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 
-	private static TreeMap<String, String> userPasses = new TreeMap<>();
-	private static User currentUser;
+	protected static TreeMap<String, String> userPasses = new TreeMap<>();
+	protected static User currentUser;
+	protected static String currentMovie;
 
 	//Account Page
 	@FXML
@@ -43,19 +44,6 @@ public class sceneController implements Initializable
 	@FXML
 	private Label errorLbl;
 
-	//Showtimes Page
-	@FXML
-	private ChoiceBox<String> eightPM = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> eightThirPM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> ninePM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> nineThirPM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> tenPM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> tenThirPM  = new ChoiceBox<>();
 
 	//Catalog Page
 	@FXML
@@ -66,7 +54,6 @@ public class sceneController implements Initializable
 	private ListView<String> purchasedTicketListView = new ListView<>();
 	@FXML
 	private ListView<String> pastTicketListView = new ListView<>();
-
 
 	// Initialization //
 
@@ -81,12 +68,7 @@ public class sceneController implements Initializable
 		try {
 			catalogListView.getItems().addAll(getMovieList());
 
-			eightPM.getItems().addAll(getAmounts());
-			eightThirPM.getItems().addAll(getAmounts());
-			ninePM.getItems().addAll(getAmounts());
-			nineThirPM.getItems().addAll(getAmounts());
-			tenPM.getItems().addAll(getAmounts());
-			tenThirPM.getItems().addAll(getAmounts());
+
 
 		} catch (IOException e) {
 			throw new RuntimeException(e);
@@ -280,55 +262,6 @@ public class sceneController implements Initializable
 	}
 
 	/**
-	 * Takes User to showtimes of this movie.
-	 * @param event
-	 * @throws IOException
-	 */
-
-	public void showTimes(ActionEvent event) throws IOException {
-		goTo(event, "showTimes.fxml" );
-	}
-
-	/**
-	 * If there are selection(s), take User to the cart with those selections added to it.
-	 * @param event
-	 */
-	public void continueCartClicked (ActionEvent event) throws IOException {
-		List<String> selections = new ArrayList<>();
-
-		if (eightPM.getValue() != null && !Objects.equals(eightPM.getValue(), "0")){
-			selections.add(eightPM.getValue());
-		}
-
-		if (eightThirPM.getValue() != null && !Objects.equals(eightThirPM.getValue(), "0")){
-			selections.add(eightThirPM.getValue());
-		}
-		if (ninePM.getValue() != null && !Objects.equals(ninePM.getValue(), "0")){
-			selections.add(ninePM.getValue());
-		}
-		if (nineThirPM.getValue() != null && !Objects.equals(nineThirPM.getValue(), "0")){
-			selections.add(nineThirPM.getValue());
-		}
-		if (tenPM.getValue() != null && !Objects.equals(tenPM.getValue(), "0")){
-			selections.add(tenPM.getValue());
-		}
-		if (tenThirPM.getValue() != null && !Objects.equals(tenThirPM.getValue(), "0")){
-			selections.add(tenThirPM.getValue());
-		}
-
-		if(!selections.isEmpty()){
-			System.out.println(selections);
-			currentUser.addToCart(selections);
-			goTo(event, "cartPage.fxml");
-		}
-		else
-		{
-			errorLbl.setText("Please Make A Selection Before Continuing");
-		}
-
-	}
-
-	/**
 	 * Places tickets in the cart into the User's current ticket list.
 	 * 	Takes User to a confirmation page.
 	 * @param event
@@ -336,7 +269,6 @@ public class sceneController implements Initializable
 	public void purchaseCLicked (ActionEvent event){
 
 	}
-
 
 	/**
 	 * Takes the user to Atlantic Rim's description page.
@@ -353,7 +285,7 @@ public class sceneController implements Initializable
 	 * @throws IOException
 	 */
 	public void BG7Clicked(ActionEvent event) throws IOException {
-		goTo(event, "BigGuy7.fxml");
+		continueToMovie(event, "BigGuy7.fxml");
 	}
 
 	/**
@@ -419,6 +351,15 @@ public class sceneController implements Initializable
 		stage.setScene(scene);
 		stage.show();
 	}
+
+	private void continueToMovie(ActionEvent event, String fileName) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(fileName));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(new Scene(loader.load()));
+
+		stage.show();
+	}
+
 	/**
 	 * Gets the movie list information from movieNames.txt.
 	 * 	Used in initialize method to initialize the catalog list.
@@ -444,25 +385,6 @@ public class sceneController implements Initializable
 
 		return movieList;
 	}
-
-	/**
-	 * Similar to getMovieList, gets amounts to add to the choice boxes in the Show Times page.
-	 * @return
-	 */
-	private List<String> getAmounts (){
-		List<String> amounts = new ArrayList<>();
-
-		amounts.add("0");
-		amounts.add("1");
-		amounts.add("2");
-		amounts.add("3");
-
-		return amounts;
-
-
-	}
-
-
 
 
 }
