@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ticketController">
    <children>
       <ToolBar layoutY="80.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <items>
@@ -46,17 +46,17 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="10.0" layoutY="125.0" text="Purchased">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="300.0" layoutY="125.0" text="Past">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ListView fx:id="purchasedTicketListView" layoutX="14.0" layoutY="160.0" prefHeight="230.0" prefWidth="290.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="296.0" AnchorPane.topAnchor="160.0" />
-      <ListView fx:id="pastTicketListView" layoutX="300.0" layoutY="160.0" prefHeight="230.0" prefWidth="290.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="160.0" />
+      <AnchorPane layoutX="15.0" layoutY="125.0" prefHeight="275.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+         <children>
+            <Label layoutX="245.0" layoutY="-3.0" text="Purchased" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="purchasedTicketListView" layoutX="14.0" layoutY="23.0" prefHeight="192.0" prefWidth="570.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0" />
+            <Button layoutX="253.0" layoutY="239.0" mnemonicParsing="false" onAction="#removeFromTickets" text="Remove Ticket" />
+            <Label fx:id="errorLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="222.0" prefHeight="17.0" prefWidth="376.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

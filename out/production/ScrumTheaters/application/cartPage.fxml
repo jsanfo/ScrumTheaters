@@ -47,6 +47,7 @@
          </children>
       </AnchorPane>
       <ListView fx:id="cartListView" layoutX="14.0" layoutY="136.0" prefHeight="241.0" prefWidth="406.0" />
-      <Button layoutX="471.0" layoutY="244.0" mnemonicParsing="false" text="Purchase" />
+      <Button layoutX="454.0" layoutY="228.0" mnemonicParsing="false" onAction="#purchaseClicked" prefHeight="25.0" prefWidth="115.0" text="Purchase" />
+      <Button layoutX="454.0" layoutY="260.0" mnemonicParsing="false" onAction="#removeFromCartClicked" text="Remove From Cart" />
    </children>
 </AnchorPane>

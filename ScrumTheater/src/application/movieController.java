@@ -27,7 +27,6 @@ public class movieController extends sceneController {
     public void showTimes(ActionEvent event) throws IOException {
         continueToShowTimes(event);
     }
-
     private void continueToShowTimes(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("showTimes.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

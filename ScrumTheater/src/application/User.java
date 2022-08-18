@@ -18,9 +18,9 @@ public class User
     //Current tickets (Tickets for movies whose showtime is now or in the future)
     private List<String> currentTickets = new ArrayList<>();
     //Past Tickets (Tickets for movies whose showtime has already passed)
-    private List<String> pastTickets = new ArrayList<>();
     //List of tickets currently in User's cart.
     private List<String> cart = new ArrayList<>();
+    LinkedList<String> lines = new LinkedList<>();
 
     // Constructors //
 
@@ -86,7 +86,7 @@ public class User
      */
     public void overwriteLine(String oldLine, String newLine) throws IOException {
         Path path = Paths.get(getFilePath());
-        List<String> lines = new ArrayList<>(Files.readAllLines(path));
+        lines = new LinkedList<>(Files.readAllLines(path));
 
         for (int i = 0; i < lines.size(); i++)
         {
@@ -121,8 +121,8 @@ public class User
      * @throws FileNotFoundException
      */
     private void readAccountFile(File f) throws FileNotFoundException {
-        LinkedList<String> lines = new LinkedList<>();
         Scanner sc = new Scanner(f);
+        lines = new LinkedList<>();
 
         userName = sc.nextLine();
         password = sc.nextLine();
@@ -152,35 +152,6 @@ public class User
     }
     public List<String> getCart()
     {
-        List<String> tix = cart;
-        List<Integer> amts = new ArrayList<>();
-        List<String> names = new ArrayList<>();
-        List<String> times = new ArrayList<>();
-
-        for (int i = 0; i < tix.size(); i++)
-        {
-            String strs[] = tix.get(i).split(",");
-
-            amts.add(Integer.parseInt(strs[0]));
-            names.add(strs[1]);
-            times.add(strs[2]);
-        }
-
-        for (int i = 0; i < names.size(); i++)
-        {
-            for (int j = 0; j < names.size(); j++)
-            {
-                if (i != j && names.get(i).equals(names.get(j)) && times.get(i).equals(times.get(j)))
-                {
-                    int newAmt = amts.get(i) + amts.get(j);
-                    cart.remove(amts.get(i) + "," + names.get(i) + "," + times.get(i));
-                    cart.remove(amts.get(j) + "," + names.get(j) + "," + times.get(j));
-                    cart.remove(newAmt + "," + names.get(i) + "," + times.get(i));
-                    cart.add(newAmt + "," + names.get(i) + "," + times.get(i));
-                }
-            }
-        }
-
         return cart;
     }
     public List<String> getCartDisplayList()
@@ -195,6 +166,63 @@ public class User
         }
 
         return displayList;
+    }
+    public LinkedList<String> getPurchasedTickets() throws FileNotFoundException {
+        readAccountFile(new File(getFilePath()));
+        LinkedList<String> displayableLines = new LinkedList<>();
+
+        for (int i = 0; i < lines.size(); i++)
+        {
+            String strs[] = lines.get(i).split(",");
+
+            String amt = strs[0];
+            String name = strs[1];
+            String time = strs[2];
+
+            String displayableLine = strs[0] + " For: " + strs[1] + " at " + strs[2];
+            displayableLines.add(displayableLine);
+        }
+
+        return displayableLines;
+    }
+    public void removeFromCart(String item) throws IOException {
+        cart.remove(item);
+        removeFromFile(item);
+    }
+    public void removeFromPurchased(String item) throws IOException {
+        currentTickets.remove(item);
+        removeFromFile(item);
+    }
+    public void addToFile(String line) throws IOException {
+        String l = line + "\r\n";
+        File f = new File(getFilePath());
+
+        if (f.isFile())
+        {
+            FileOutputStream fos = new FileOutputStream(getFilePath(), true);
+            fos.write(l.getBytes());
+            fos.close();
+        }
+    }
+    public void removeFromFile(String line) throws IOException {
+        lines.remove(line);
+
+        List<String> fileContent = new ArrayList<>(Files.readAllLines(Path.of(getFilePath())));
+
+        for (int i = 0; i < fileContent.size(); i++)
+        {
+            if (fileContent.get(i).equals(line))
+            {
+                fileContent.remove(line);
+                break;
+            }
+        }
+
+        Files.write(Path.of(getFilePath()), fileContent);
+    }
+    public void addTicketToCurrent(String ticket) throws IOException {
+        currentTickets.add(ticket);
+        addToFile(ticket);
     }
 
     /**

@@ -26,7 +26,6 @@ public class sceneController implements Initializable
 
 	protected static TreeMap<String, String> userPasses = new TreeMap<>();
 	protected static User currentUser;
-	protected static String currentMovie;
 
 	//Account Page
 	@FXML
@@ -48,12 +47,6 @@ public class sceneController implements Initializable
 	//Catalog Page
 	@FXML
 	private ListView<String> catalogListView = new ListView<>();
-
-	//Ticket Page
-	@FXML
-	private ListView<String> purchasedTicketListView = new ListView<>();
-	@FXML
-	private ListView<String> pastTicketListView = new ListView<>();
 
 	// Initialization //
 
@@ -130,7 +123,13 @@ public class sceneController implements Initializable
 	 */
 	public void ticketsClicked(ActionEvent event) throws IOException
 	{
-		goTo(event, "ticketPage.fxml");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ticketPage.fxml"));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(new Scene(loader.load()));
+
+
+
+		stage.show();
 	}
 
 	/**
@@ -261,14 +260,7 @@ public class sceneController implements Initializable
 
 	}
 
-	/**
-	 * Places tickets in the cart into the User's current ticket list.
-	 * 	Takes User to a confirmation page.
-	 * @param event
-	 */
-	public void purchaseCLicked (ActionEvent event){
 
-	}
 
 	/**
 	 * Takes the user to Atlantic Rim's description page.
