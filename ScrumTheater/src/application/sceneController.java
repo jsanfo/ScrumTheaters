@@ -2,15 +2,10 @@ package application;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,8 +15,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -30,82 +23,35 @@ public class sceneController implements Initializable
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	private TreeMap<String, String> userPasses = new TreeMap<>();
-	private static User currentUser;
 
-	// Login Page username TextField
+	protected static TreeMap<String, String> userPasses = new TreeMap<>();
+	protected static User currentUser;
+
+	//Account Page
 	@FXML
 	private TextField userField;
-	// Registration Page username TextField
 	@FXML
-	private TextField regUserField;
+	private TextField passField;
 	@FXML
-	private TextField cardNumField;
-	@FXML
-	private TextField accTextField;
-	@FXML
-	private TextField accPassField;
-	@FXML
-	private TextField accCardField;
+	private TextField cardField;
 	@FXML
 	private Button finalizeBtn;
 	@FXML
 	private Button editProfBtn;
 	@FXML
 	private Button viewInfoBtn;
-	// Login Page password PasswordField
-	@FXML
-	private PasswordField passwordField;
-	// Registration Page password PasswordField
-	@FXML
-	private PasswordField regPasswordField;
-	// Registration Page password confirmation PasswordField
-	@FXML
-	private PasswordField confirmPasswordField;
-	// Login Page error label Label
 	@FXML
 	private Label errorLbl;
-	// Registration Page error label Label
-	@FXML
-	private Label regErrorLbl;
-	// Catalog Page Listview
+
+
+	//Catalog Page
 	@FXML
 	private ListView<String> catalogListView = new ListView<>();
-	// Ticket Page List View
-	@FXML
-	private ListView<String> purchasedTicketListView = new ListView<>();
-	@FXML
-	private ListView<String> pastTicketListView = new ListView<>();
-
-	@FXML
-	private ChoiceBox<String> eightPM = new ChoiceBox<>();
-
-	@FXML
-	private ChoiceBox<String> eightThirPM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> ninePM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> nineThirPM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> tenPM  = new ChoiceBox<>();
-	@FXML
-	private ChoiceBox<String> tenThirPM  = new ChoiceBox<>();
-
-	/**
-	 * Default constructor for sceneController class
-	 * 	calls getUserPasses method to initialize the TreeMap.
-	 * @throws FileNotFoundException
-	 */
-	public sceneController() throws FileNotFoundException
-	{
-		getUserPasses();
-	}
 
 	// Initialization //
 
 	/**
 	 * Initializes the list view for the catalog.
-	 * 	Later, will initialize the list views for the previous and purchased tickets as well.
 	 * @param url
 	 * @param resourceBundle
 	 */
@@ -115,16 +61,22 @@ public class sceneController implements Initializable
 		try {
 			catalogListView.getItems().addAll(getMovieList());
 
-			eightPM.getItems().addAll(getAmounts());
-			eightThirPM.getItems().addAll(getAmounts());
-			ninePM.getItems().addAll(getAmounts());
-			nineThirPM.getItems().addAll(getAmounts());
-			tenPM.getItems().addAll(getAmounts());
-			tenThirPM.getItems().addAll(getAmounts());
+
 
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	/**
+	 * Initializes data after User logs in
+	 * @param current User instance for the current user.
+	 * @param UP Treemap for the usernames/passwords
+	 */
+	public void initData(User current, TreeMap<String, String> UP)
+	{
+		currentUser = current;
+		userPasses = UP;
 	}
 
 
@@ -171,7 +123,13 @@ public class sceneController implements Initializable
 	 */
 	public void ticketsClicked(ActionEvent event) throws IOException
 	{
-		goTo(event, "ticketPage.fxml");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ticketPage.fxml"));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(new Scene(loader.load()));
+
+
+
+		stage.show();
 	}
 
 	/**
@@ -185,47 +143,16 @@ public class sceneController implements Initializable
 	}
 
 	/**
-	 * When login button is clicked, open login page
-	 * @param event Button clicked
-	 * @throws IOException
+	 * 	Allows User to see their username,
+	 * 	Amount of chars in their password,
+	 * 	Amount of chars in their Card Number
+	 * @param event
 	 */
-	public void loginClicked(ActionEvent event) throws IOException
-	{
-
-		String username = userField.getText();
-		String password = passwordField.getText();
-
-
-		if (!checkUserIsRegistered(username))
-		{
-			errorLbl.setText("Username provided has no registered account");
-			return;
-		}
-
-		if (!checkPasswordCorrect(username, password))
-		{
-			errorLbl.setText("Password does not match username provided");
-		}
-		else
-		{
-			currentUser = new User(new File("ScrumTheater/src/resources/text/accountFiles/" + username));
-			homeClicked(event);
-		}
-	}
-	/**
-	 * When create account button is clicked, open the registration page.
-	 * @param event Button clicked
-	 * @throws IOException
-	 */
-	public void createAccClicked(ActionEvent event) throws IOException
-	{
-		goTo(event, "registrationPage.fxml");
-	}
 	public void viewInfoClicked(ActionEvent event)
 	{
-		accTextField.setText(currentUser.getUserName());
-		accPassField.setText(userPasses.get(currentUser.getUserName()));
-		accCardField.setText(currentUser.getCardNum());
+		userField.setText(currentUser.getUserName());
+		passField.setText(userPasses.get(currentUser.getUserName()));
+		cardField.setText(currentUser.getCardNum());
 
 		viewInfoBtn.setDisable(true);
 		viewInfoBtn.setVisible(false);
@@ -233,11 +160,16 @@ public class sceneController implements Initializable
 		editProfBtn.setDisable(false);
 		editProfBtn.setVisible(true);
 	}
+
+	/**
+	 * Allows user to edit their username, password, and Card Number
+	 * @param event
+	 */
 	public void editProfileClicked(ActionEvent event)
 	{
-		accTextField.setDisable(false);
-		accPassField.setDisable(false);
-		accCardField.setDisable(false);
+		userField.setDisable(false);
+		passField.setDisable(false);
+		cardField.setDisable(false);
 
 		editProfBtn.setDisable(true);
 		editProfBtn.setVisible(false);
@@ -245,36 +177,43 @@ public class sceneController implements Initializable
 		finalizeBtn.setDisable(false);
 		finalizeBtn.setVisible(true);
 	}
+
+	/**
+	 * Checks that requirements are met, if not displays why in a label
+	 * Sets username, password, and card number found in text and pass fields to the User's
+	 * 	matching variables.
+	 * @throws IOException
+	 */
 	public void finalizeClicked() throws IOException {
-		if (Objects.equals(accTextField.getText(), accPassField.getText()))
+		if (Objects.equals(userField.getText(), passField.getText()))
 		{
 			errorLbl.setText("Username cannot be the same as password");
 			return;
 		}
-		else if (Objects.equals(accTextField.getText(), accCardField.getText()))
+		else if (Objects.equals(userField.getText(), cardField.getText()))
 		{
 			errorLbl.setText("Username cannot be the same as Card Number");
 			return;
 		}
-		else if (Objects.equals(accPassField.getText(), accCardField.getText()))
+		else if (Objects.equals(passField.getText(), cardField.getText()))
 		{
 			errorLbl.setText("Password cannot be the same as Card Number");
 			return;
 		}
 
-		if (accCardField.getText().length() != 16)
+		if (cardField.getText().length() != 16)
 		{
 			errorLbl.setText("Card Number must be 16 digits");
 			return;
 		}
-		else if (!accCardField.getText().matches("[0-9]+"))
+		else if (!cardField.getText().matches("[0-9]+"))
 		{
 			errorLbl.setText("Card Number must only contain numbers.");
 			return;
 		}
-		currentUser.setUserName(accTextField.getText());
-		currentUser.setPassword(accPassField.getText());
-		currentUser.setCardNum(accCardField.getText());
+		currentUser.setUserName(userField.getText());
+		currentUser.setPassword(passField.getText());
+		currentUser.setCardNum(cardField.getText());
 
 		finalizeBtn.setDisable(true);
 		finalizeBtn.setVisible(false);
@@ -282,67 +221,20 @@ public class sceneController implements Initializable
 		viewInfoBtn.setDisable(false);
 		viewInfoBtn.setVisible(true);
 
-		accTextField.setDisable(true);
-		accTextField.setText("");
-		accPassField.setDisable(true);
-		accPassField.setText("");
-		accCardField.setDisable(true);
-		accCardField.setText("");
+		userField.setDisable(true);
+		userField.setText("");
+		passField.setDisable(true);
+		passField.setText("");
+		cardField.setDisable(true);
+		cardField.setText("");
 	}
 
 	/**
-	 * Registers the user's new account with the parameters provided in the
-	 * 	text field and password fields.
-	 * @param event Button Clicked
+	 * Sets the movie that was selected as the choice.  Does nothing if no movie was
+	 * selected
+	 * @param event
 	 * @throws IOException
 	 */
-	public void registerAccClicked(ActionEvent event) throws IOException
-	{
-		if (userPasses.containsKey(regUserField.getText()))
-		{
-			regErrorLbl.setText("This username is already in use");
-			return;
-		}
-
-		if (!cardNumField.getText().matches("[0-9]+"))
-		{
-			regErrorLbl.setText("Invalid Card Number: Numbers only");
-			return;
-		}
-		else if (cardNumField.getText().length() != 16)
-		{
-			regErrorLbl.setText("Invalid Card Number: Must Be 16 Characters");
-			return;
-		}
-
-		if (Objects.equals(regUserField.getText(), regPasswordField.getText()))
-		{
-			regErrorLbl.setText("Username cannot be the same as password");
-			return;
-		}
-		else if (Objects.equals(regUserField.getText(), cardNumField.getText()))
-		{
-			regErrorLbl.setText("Username cannot be the same as Card Number");
-			return;
-		}
-		else if (Objects.equals(regPasswordField.getText(), cardNumField.getText()))
-		{
-			regErrorLbl.setText("Password cannot be the same as Card Number");
-			return;
-		}
-
-		if (Objects.equals(regPasswordField.getText(), confirmPasswordField.getText()))
-		{
-
-			currentUser = new User(regUserField.getText(),
-					regPasswordField.getText(),
-					cardNumField.getText());
-			currentUser.createAccountFile();
-			goTo(event, "homePage.fxml");
-		}
-
-	}
-
 	public void movieSelected(ActionEvent event) throws IOException {
 		String movie="";
 		ObservableList<String> movies;
@@ -368,66 +260,67 @@ public class sceneController implements Initializable
 
 	}
 
-	public void showTimes(ActionEvent event) throws IOException {
-		goTo(event, "showTimes.fxml" );
-	}
-
-	public void continueCartClicked (ActionEvent event){
-		List<String> selections = new ArrayList<>();
-
-		if (eightPM.getValue() != null && !Objects.equals(eightPM.getValue(), "0")){
-			selections.add(eightPM.getValue());
-		}
-
-		if (eightThirPM.getValue() != null && !Objects.equals(eightThirPM.getValue(), "0")){
-			selections.add(eightThirPM.getValue());
-		}
-		if (ninePM.getValue() != null && !Objects.equals(ninePM.getValue(), "0")){
-			selections.add(ninePM.getValue());
-		}
-		if (nineThirPM.getValue() != null && !Objects.equals(nineThirPM.getValue(), "0")){
-			selections.add(nineThirPM.getValue());
-		}
-		if (tenPM.getValue() != null && !Objects.equals(tenPM.getValue(), "0")){
-			selections.add(tenPM.getValue());
-		}
-		if (tenThirPM.getValue() != null && !Objects.equals(tenThirPM.getValue(), "0")){
-			selections.add(tenThirPM.getValue());
-		}
-
-		if(!selections.isEmpty()){
-
-			System.out.println(selections);
-			currentUser.addToCart(selections);
-
-		}
-
-	}
-
-	public void purchaseCLicked (ActionEvent event){
-
-	}
 
 
-
+	/**
+	 * Takes the user to Atlantic Rim's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void ARClicked(ActionEvent event) throws IOException {
 		goTo(event, "Atlantic_Rim.fxml");
 	}
+
+	/**
+	 * Takes the user to Big Guy 7's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void BG7Clicked(ActionEvent event) throws IOException {
-		goTo(event, "BigGuy7.fxml");
+		continueToMovie(event, "BigGuy7.fxml");
 	}
+
+	/**
+	 * Takes the user to Finding Fish's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void FFClicked(ActionEvent event) throws IOException {
 		goTo(event, "Finding_Fish.fxml");
 	}
+
+	/**
+	 * Takes the user to The Quick and The Angry's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void QAClicked(ActionEvent event) throws IOException {
 		goTo(event, "QuickAndAngry.fxml");
 	}
+
+	/**
+	 * Takes the user to Squidnado's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void SquidClicked(ActionEvent event) throws IOException {
 		goTo(event, "Squidnado.fxml");
 	}
+
+	/**
+	 * Takes the user to The Neptunian's description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void NeptunianClicked(ActionEvent event) throws IOException {
 		goTo(event, "TheNeptunian.fxml");
 	}
+
+	/**
+	 * Takes the user to The Revengers' description page.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void RevengersClicked(ActionEvent event) throws IOException {
 		goTo(event, "TheRevengers.fxml");
 	}
@@ -435,6 +328,13 @@ public class sceneController implements Initializable
 
 	// Helper Methods //
 
+	/**
+	 * Sets the scene to the .fxml file whose name was passed in.
+	 * 	Easy implementation for a button to "Go To" a page.
+	 * @param event
+	 * @param fileName Name of the file to go to
+	 * @throws IOException
+	 */
 	private void goTo(ActionEvent event, String fileName) throws IOException
 	{
 		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fileName)));
@@ -443,6 +343,15 @@ public class sceneController implements Initializable
 		stage.setScene(scene);
 		stage.show();
 	}
+
+	private void continueToMovie(ActionEvent event, String fileName) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(fileName));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(new Scene(loader.load()));
+
+		stage.show();
+	}
+
 	/**
 	 * Gets the movie list information from movieNames.txt.
 	 * 	Used in initialize method to initialize the catalog list.
@@ -469,77 +378,5 @@ public class sceneController implements Initializable
 		return movieList;
 	}
 
-	private List<String> getAmounts (){
-		List<String> amounts = new ArrayList<>();
 
-		amounts.add("0");
-		amounts.add("1");
-		amounts.add("2");
-		amounts.add("3");
-
-		return amounts;
-
-
-	}
-
-	/**
-	 * Checks if the user is already registered.
-	 * 	If they are, return true;
-	 * @param username To check across the Treemap of Usernames and Passwords.
-	 * @return True if they are registered with this username already
-	 * 			False if they are not.
-	 */
-	private boolean checkUserIsRegistered(String username)
-	{
-		boolean isRegistered = false;
-
-		for (int i = 0; i < userPasses.size(); i++)
-		{
-			if (userPasses.containsKey(username))
-				isRegistered = true;
-		}
-
-		return isRegistered;
-	}
-
-	/**
-	 * Checks if the password passed in is part of the key, value pair with the username.
-	 * @param username The key of the userPasses Treemap
-	 * @param password The value of the userPasses Treemap
-	 * @return True if these two are paired,
-	 * 			False if they are not.
-	 */
-	private boolean checkPasswordCorrect(String username, String password)
-	{
-		boolean isCorrect = false;
-
-		String check = userPasses.get(username);
-
-		if (Objects.equals(check, password))
-			isCorrect = true;
-
-		return isCorrect;
-	}
-
-	/**
-	 * Gets the username and password from every account file
-	 * 	and puts it in the userPasses Treemap as a key, value pair
-	 * @throws FileNotFoundException
-	 */
-	private void getUserPasses() throws FileNotFoundException {
-		File accountFolder = new File("ScrumTheater/src/resources/text/accountFiles");
-		List<File> files = List.of(Objects.requireNonNull(accountFolder.listFiles()));
-
-
-
-		for (int i = 0; i < files.size(); i++)
-		{
-			Scanner sc = new Scanner(files.get(i));
-			String user = sc.nextLine();
-			String pass = sc.nextLine();
-
-			userPasses.put(user, pass);
-			sc.close();
-		}
-	}
 }

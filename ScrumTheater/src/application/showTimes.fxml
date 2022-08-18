@@ -8,20 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.showTimeController">
    <children>
-      <ChoiceBox fx:id="eightPM" layoutX="144.0" layoutY="158.0" prefHeight="16.0" prefWidth="58.0" />
-      <ChoiceBox fx:id="eightThirPM" layoutX="144.0" layoutY="200.0" prefHeight="16.0" prefWidth="58.0" />
-      <ChoiceBox fx:id="ninePM" layoutX="308.0" layoutY="158.0" prefHeight="16.0" prefWidth="58.0" />
-      <ChoiceBox fx:id="nineThirPM" layoutX="308.0" layoutY="200.0" prefHeight="16.0" prefWidth="58.0" />
-      <ChoiceBox fx:id="tenPM" layoutX="471.0" layoutY="158.0" prefHeight="16.0" prefWidth="58.0" />
-      <ChoiceBox fx:id="tenThirPM" layoutX="471.0" layoutY="200.0" prefHeight="16.0" prefWidth="58.0" />
-      <Label layoutX="88.0" layoutY="158.0" prefHeight="25.0" prefWidth="48.0" text="8:00pm" />
-      <Label layoutX="398.0" layoutY="200.0" prefHeight="25.0" prefWidth="48.0" text="10:30pm" />
-      <Label layoutX="398.0" layoutY="158.0" prefHeight="25.0" prefWidth="48.0" text="10:00pm" />
-      <Label layoutX="236.0" layoutY="200.0" prefHeight="25.0" prefWidth="48.0" text="9:30pm" />
-      <Label layoutX="236.0" layoutY="158.0" prefHeight="25.0" prefWidth="48.0" text="9:00pm" />
-      <Label layoutX="88.0" layoutY="200.0" prefHeight="25.0" prefWidth="48.0" text="8:30pm" />
+      <ChoiceBox fx:id="eightPM" layoutX="144.0" layoutY="206.0" prefHeight="16.0" prefWidth="58.0" />
+      <ChoiceBox fx:id="eightThirPM" layoutX="144.0" layoutY="248.0" prefHeight="16.0" prefWidth="58.0" />
+      <ChoiceBox fx:id="ninePM" layoutX="308.0" layoutY="206.0" prefHeight="16.0" prefWidth="58.0" />
+      <ChoiceBox fx:id="nineThirPM" layoutX="308.0" layoutY="248.0" prefHeight="16.0" prefWidth="58.0" />
+      <ChoiceBox fx:id="tenPM" layoutX="471.0" layoutY="206.0" prefHeight="16.0" prefWidth="58.0" />
+      <ChoiceBox fx:id="tenThirPM" layoutX="471.0" layoutY="248.0" prefHeight="16.0" prefWidth="58.0" />
+      <Label layoutX="88.0" layoutY="206.0" prefHeight="25.0" prefWidth="48.0" text="8:00pm" />
+      <Label layoutX="398.0" layoutY="248.0" prefHeight="25.0" prefWidth="48.0" text="10:30pm" />
+      <Label layoutX="398.0" layoutY="206.0" prefHeight="25.0" prefWidth="48.0" text="10:00pm" />
+      <Label layoutX="236.0" layoutY="248.0" prefHeight="25.0" prefWidth="48.0" text="9:30pm" />
+      <Label layoutX="236.0" layoutY="206.0" prefHeight="25.0" prefWidth="48.0" text="9:00pm" />
+      <Label layoutX="88.0" layoutY="248.0" prefHeight="25.0" prefWidth="48.0" text="8:30pm" />
       <ToolBar layoutY="80.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <items>
             <Button mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" text="Home">
@@ -58,11 +58,16 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="448.0" layoutY="331.0" mnemonicParsing="false" onAction="#continueCartClicked" text="Continue to Cart" />
-      <Label layoutX="214.0" layoutY="312.0" prefHeight="64.0" prefWidth="188.0" text="Showtimes" textAlignment="CENTER">
+      <Button layoutX="248.0" layoutY="338.0" mnemonicParsing="false" onAction="#continueCartClicked" text="Continue to Cart" />
+      <Label layoutX="235.0" layoutY="125.0" text="Showtimes For" textAlignment="CENTER">
          <font>
-            <Font size="38.0" />
+            <Font size="20.0" />
          </font>
       </Label>
+      <Label fx:id="errorLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="167.0" layoutY="288.0" prefHeight="35.0" prefWidth="266.0" textAlignment="CENTER" wrapText="true" />
+      <Label fx:id="movNameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="155.0" prefHeight="45.0" prefWidth="443.0" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
    </children>
 </AnchorPane>
