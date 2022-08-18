@@ -13,19 +13,29 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class paymentController extends ticketController {
-
+    //Shows current User's username to show customer to confirm.
     @FXML
     private Label userLabel = new Label();
+    //Shows a censored card number (only the last 4 digits visible)
     @FXML
     private Label cardLabel = new Label();
 
-
+    /**
+     * Initializes by setting the labels with username and card number respectively.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         setLabels();
     }
 
+    /**
+     * Moves scene to the confirmation page.
+     * @param event
+     * @throws IOException
+     */
     public void confirmClicked(ActionEvent event) throws IOException {
         for (int i = 0; i < currentUser.getCart().size(); i++) {
             currentUser.addTicketToCurrent(currentUser.getCart().get(i));
@@ -35,17 +45,23 @@ public class paymentController extends ticketController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(loader.load()));
 
-
-
         stage.show();
-
     }
 
+    /**
+     * Sets the Labels for the username and card number.
+     */
     private void setLabels()
     {
         userLabel.setText(currentUser.getUserName());
         cardLabel.setText(censorCardNumber(currentUser.getCardNum()));
     }
+
+    /**
+     * Censors the card number for all digits except the last 4, and returns it.
+     * @param cardNum number to be censored
+     * @return censored number.
+     */
     protected String censorCardNumber(String cardNum)
     {
         char star = '*';

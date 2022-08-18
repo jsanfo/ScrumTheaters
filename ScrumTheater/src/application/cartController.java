@@ -15,9 +15,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class cartController extends sceneController implements Initializable {
+    //Cart List View.  Shows the items in the cart.
     @FXML
     private ListView<String> cartListView = new ListView<>();
 
+    /**
+     * Initializes the cartListView to show all items in current User's cart.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cartListView.getItems().addAll(currentUser.getCartDisplayList());
@@ -33,6 +39,12 @@ public class cartController extends sceneController implements Initializable {
         continueToPayment(event);
     }
 
+    /**
+     * Removes ticket selected from the cart list.
+     *  If nothing is selected, gives a warning message.
+     * @param event
+     * @throws IOException
+     */
     public void removeFromCartClicked(ActionEvent event) throws IOException {
         String ticket = "";
         ObservableList<String> tickets;
@@ -60,6 +72,11 @@ public class cartController extends sceneController implements Initializable {
         cartListView.getItems().addAll(currentUser.getCartDisplayList());
     }
 
+    /**
+     * Moves the scene to the payment screen page.
+     * @param event
+     * @throws IOException
+     */
     public void continueToPayment(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("paymentScreen.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

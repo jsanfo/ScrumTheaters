@@ -18,13 +18,18 @@ import java.util.ResourceBundle;
 
 public class ticketController extends cartController implements Initializable {
 
-    //Ticket Page
+    //List of purchased tickets
     @FXML
     protected ListView<String> purchasedTicketListView = new ListView<>();
+    //Label to notify user of errors.
     @FXML
     private Label errorLbl = new Label();
 
-
+    /**
+     * Initializes the ticket page by filling the list view of the tickets that have been purchased.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -35,14 +40,18 @@ public class ticketController extends cartController implements Initializable {
         }
     }
 
+    /**
+     * When remove is clicked:
+     *  If there is no selection, will set a warning message
+     *  If there is a selection clicked, clears any previous warning message and moves scene to
+     *  the cancellation page.  Also initializes a ticket string into the cancellation controller.
+     * @param event
+     * @throws IOException
+     */
     public void removeFromTickets(ActionEvent event) throws IOException {
-
-
-
         String ticket = "";
         ObservableList<String> tickets;
         tickets =  purchasedTicketListView.getSelectionModel().getSelectedItems();
-
 
         for (String t: tickets)
         {
@@ -64,9 +73,5 @@ public class ticketController extends cartController implements Initializable {
         controller.initData(ticket);
 
         stage.show();
-
-
-
-
     }
 }

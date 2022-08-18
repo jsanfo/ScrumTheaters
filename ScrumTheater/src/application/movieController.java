@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class movieController extends sceneController {
-
+    //Movie's name.  The movie name is derived from this object and passed to the showtimes page.
     @FXML
     protected Text movNameTxt = new Text();
 
@@ -27,6 +27,12 @@ public class movieController extends sceneController {
     public void showTimes(ActionEvent event) throws IOException {
         continueToShowTimes(event);
     }
+
+    /**
+     * Moves scene to showtime page.
+     * @param event
+     * @throws IOException
+     */
     private void continueToShowTimes(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("showTimes.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

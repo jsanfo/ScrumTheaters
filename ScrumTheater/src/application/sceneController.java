@@ -24,7 +24,11 @@ public class sceneController implements Initializable
 	private Scene scene;
 	private Parent root;
 
+	//Treemap of usernames and passwords.  Passwords are never directly called, only derived from this treemap
+		//Usernames are stored as keys,
+		//Passwords are stored as values.
 	protected static TreeMap<String, String> userPasses = new TreeMap<>();
+	//User instance of the current user, initialized when the user logs in or registers.
 	protected static User currentUser;
 
 	//Account Page
@@ -42,7 +46,6 @@ public class sceneController implements Initializable
 	private Button viewInfoBtn;
 	@FXML
 	private Label errorLbl;
-
 
 	//Catalog Page
 	@FXML
@@ -260,8 +263,6 @@ public class sceneController implements Initializable
 
 	}
 
-
-
 	/**
 	 * Takes the user to Atlantic Rim's description page.
 	 * @param event
@@ -344,6 +345,12 @@ public class sceneController implements Initializable
 		stage.show();
 	}
 
+	/**
+	 * Moves scene to the name of the page's file passed in.
+	 * @param event
+	 * @param fileName name of the page's file.
+	 * @throws IOException
+	 */
 	private void continueToMovie(ActionEvent event, String fileName) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(fileName));
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

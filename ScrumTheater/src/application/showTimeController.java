@@ -16,27 +16,38 @@ import java.util.*;
 
 public class showTimeController extends movieController implements Initializable {
 
-    private static String movNameStr;
+    //Label that holds movie name.
     @FXML
     private Label movNameLbl = new Label();
+    //Choice Box for 8:00PM time slot
     @FXML
     private ChoiceBox<String> eightPM = new ChoiceBox<>();
+    //Choice Box for 8:30PM time slot
     @FXML
     private ChoiceBox<String> eightThirPM  = new ChoiceBox<>();
+    //Choice Box for 9:00PM time slot
     @FXML
     private ChoiceBox<String> ninePM  = new ChoiceBox<>();
+    //Choice Box for 9:30PM time slot
     @FXML
     private ChoiceBox<String> nineThirPM  = new ChoiceBox<>();
+    //Choice Box for 10:00PM time slot
     @FXML
     private ChoiceBox<String> tenPM  = new ChoiceBox<>();
+    //Choice Box for 10:30PM time slot
     @FXML
     private ChoiceBox<String> tenThirPM  = new ChoiceBox<>();
+    //Label to notify user of errors
     @FXML
     private Label errorLbl;
 
+    /**
+     * Initializes the showtime page by filling the choice box for each time.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         eightPM.getItems().addAll(getAmounts());
         eightThirPM.getItems().addAll(getAmounts());
         ninePM.getItems().addAll(getAmounts());
@@ -45,10 +56,13 @@ public class showTimeController extends movieController implements Initializable
         tenThirPM.getItems().addAll(getAmounts());
     }
 
+    /**
+     * Initializes the movie name label with the string passed in.
+     * @param movName
+     */
     public void initData(String movName)
     {
-        movNameStr = movName;
-        movNameLbl.setText(movNameStr);
+        movNameLbl.setText(movName);
     }
 
     /**

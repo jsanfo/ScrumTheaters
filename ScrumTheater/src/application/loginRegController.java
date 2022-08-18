@@ -25,6 +25,7 @@ public class loginRegController implements Initializable {
     //Treemap for Usernames & Passwords
         //This is the only place passwords are stored outside of User's account file.
     private TreeMap<String, String> userPasses = new TreeMap<>();
+    //Instance of current User
     private User currentUser;
     private Stage stage;
 

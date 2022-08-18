@@ -11,15 +11,17 @@ import java.util.*;
 
 public class User
 {
+    //Username String
     private String userName;
+    //Password String
     private String password;
     //Card Number String
     private String cardNum;
-    //Current tickets (Tickets for movies whose showtime is now or in the future)
+    //Current tickets list
     private List<String> currentTickets = new ArrayList<>();
-    //Past Tickets (Tickets for movies whose showtime has already passed)
     //List of tickets currently in User's cart.
     private List<String> cart = new ArrayList<>();
+    //List of lines for the account file that do not include username, password, or cardNum
     LinkedList<String> lines = new LinkedList<>();
 
     // Constructors //
@@ -150,10 +152,20 @@ public class User
     {
         return cardNum;
     }
+
+    /**
+     * @return The cart of the User
+     */
     public List<String> getCart()
     {
         return cart;
     }
+
+    /**
+     * Edits the cart list to be more readable on the application,
+     *  and then returns it.
+     * @return list of readable cart tickets
+     */
     public List<String> getCartDisplayList()
     {
         List<String> displayList = new ArrayList<>();
@@ -167,6 +179,12 @@ public class User
 
         return displayList;
     }
+
+    /**
+     * Edits the purchased tickets to be more readable, and then returns it.
+     * @return list of readable movie tickets.
+     * @throws FileNotFoundException
+     */
     public LinkedList<String> getPurchasedTickets() throws FileNotFoundException {
         readAccountFile(new File(getFilePath()));
         LinkedList<String> displayableLines = new LinkedList<>();
@@ -185,14 +203,32 @@ public class User
 
         return displayableLines;
     }
+
+    /**
+     * Removes item from cart list, and removes from file.
+     * @param item - item to remove.
+     * @throws IOException
+     */
     public void removeFromCart(String item) throws IOException {
         cart.remove(item);
         removeFromFile(item);
     }
+
+    /**
+     * Removes the item from current ticket list, and then the file.
+     * @param item item to remove
+     * @throws IOException
+     */
     public void removeFromPurchased(String item) throws IOException {
         currentTickets.remove(item);
         removeFromFile(item);
     }
+
+    /**
+     * adds a line a the end of the account file.
+     * @param line line to add
+     * @throws IOException
+     */
     public void addToFile(String line) throws IOException {
         String l = line + "\r\n";
         File f = new File(getFilePath());
@@ -204,6 +240,12 @@ public class User
             fos.close();
         }
     }
+
+    /**
+     * removes the line from the lines list.  writes the lines list to the end of the file.
+     * @param line line to remove.
+     * @throws IOException
+     */
     public void removeFromFile(String line) throws IOException {
         lines.remove(line);
 
@@ -220,6 +262,12 @@ public class User
 
         Files.write(Path.of(getFilePath()), fileContent);
     }
+
+    /**
+     * adds ticket to currentTickets, then adds ticket to the end of the file.
+     * @param ticket
+     * @throws IOException
+     */
     public void addTicketToCurrent(String ticket) throws IOException {
         currentTickets.add(ticket);
         addToFile(ticket);
