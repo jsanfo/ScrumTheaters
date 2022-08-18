@@ -1,10 +1,15 @@
 package application;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,7 +20,7 @@ public class ticketController extends cartController implements Initializable {
 
     //Ticket Page
     @FXML
-    private ListView<String> purchasedTicketListView = new ListView<>();
+    protected ListView<String> purchasedTicketListView = new ListView<>();
     @FXML
     private Label errorLbl = new Label();
 
@@ -30,7 +35,9 @@ public class ticketController extends cartController implements Initializable {
         }
     }
 
-    public void removeFromTickets() throws IOException {
+    public void removeFromTickets(ActionEvent event) throws IOException {
+
+
 
         String ticket = "";
         ObservableList<String> tickets;
@@ -47,22 +54,19 @@ public class ticketController extends cartController implements Initializable {
             errorLbl.setText("Please Make A Selection");
             return;
         }
-
         errorLbl.setText("");
 
-        String strs[] = ticket.split(" For: ");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("cancellationPage.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(loader.load()));
 
-        Integer amt = Integer.parseInt(strs[0]);
-        String namTime = strs[1];
-        String s[] = namTime.split(" at ");
+        cancellationController controller = loader.getController();
+        controller.initData(ticket);
 
-        String name = s[0];
-        String time = s[1];
+        stage.show();
 
-        String tick = amt + "," + name + "," + time;
 
-        currentUser.removeFromPurchased(tick);
-        purchasedTicketListView.getItems().clear();
-        purchasedTicketListView.getItems().addAll(currentUser.getPurchasedTickets());
+
+
     }
 }

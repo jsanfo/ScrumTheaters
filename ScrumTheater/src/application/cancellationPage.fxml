@@ -3,12 +3,11 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.confController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.cancellationController">
    <children>
       <ToolBar layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <items>
@@ -46,17 +45,45 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="228.0" layoutY="145.0" text="Confirmation: ">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
-      <Label layoutX="206.0" layoutY="276.0" text="Enjoy the show!">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Button layoutX="247.0" layoutY="334.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: teal;" text="See Tickets" textFill="GOLD" />
-      <ListView fx:id="confListView" layoutX="181.0" layoutY="179.0" prefHeight="103.0" prefWidth="240.0" style="-fx-background-color: teal;" />
+      <AnchorPane fx:id="areYouSurePane" layoutX="144.0" layoutY="200.0">
+         <children>
+            <Label text="Are You Sure You'd Like To Cancel?">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="107.0" layoutY="34.0" mnemonicParsing="false" onAction="#yesCancelClicked" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: teal;" text="Yes, Cancel" textFill="GOLD" />
+            <Button layoutX="107.0" layoutY="67.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: teal;" text="No" textFill="GOLD" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="confirmedPane" disable="true" layoutX="163.0" layoutY="186.0" prefHeight="159.0" prefWidth="296.0" visible="false">
+         <children>
+            <Label layoutX="27.0" text="Cancellation Confirmed">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutY="44.0" text="Refund Will Be Processed To: ">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="cardNumLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="44.0" prefHeight="19.0" prefWidth="126.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="77.0" text="Within 3-7 Business Days">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="76.0" layoutY="122.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="19.0" prefWidth="144.0" style="-fx-background-color: teal;" text="Return To Tickets" textFill="GOLD">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
