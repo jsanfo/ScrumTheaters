@@ -63,8 +63,8 @@
          </font>
       </Label>
       <Button fx:id="viewInfoBtn" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#viewInfoClicked" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: teal;" text="View Info" textFill="GOLD" />
-      <Button fx:id="editProfBtn" disable="true" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#editProfileClicked" prefHeight="25.0" prefWidth="87.0" text="Edit Profile" visible="false" />
-      <Button fx:id="finalizeBtn" disable="true" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#finalizeClicked" prefHeight="25.0" prefWidth="87.0" text="Finalize!" visible="false" />
+      <Button fx:id="editProfBtn" disable="true" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#editProfileClicked" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Edit Profile" textFill="GOLD" visible="false" />
+      <Button fx:id="finalizeBtn" disable="true" layoutX="149.0" layoutY="314.0" mnemonicParsing="false" onAction="#finalizeClicked" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Finalize!" textFill="GOLD" visible="false" />
       <Button layoutX="372.0" layoutY="264.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: teal;" text="Transactions" textFill="GOLD" />
       <Label layoutX="64.0" layoutY="216.0" text="Username:" />
       <Label layoutX="66.0" layoutY="248.0" text="Password:" />

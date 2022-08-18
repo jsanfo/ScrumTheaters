@@ -53,8 +53,8 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ListView fx:id="purchasedTicketListView" layoutX="14.0" layoutY="23.0" prefHeight="192.0" prefWidth="570.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0" />
-            <Button layoutX="253.0" layoutY="239.0" mnemonicParsing="false" onAction="#removeFromTickets" text="Remove Ticket" />
+            <ListView fx:id="purchasedTicketListView" layoutX="14.0" layoutY="23.0" prefHeight="192.0" prefWidth="570.0" style="-fx-background-color: teal;" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0" />
+            <Button layoutX="253.0" layoutY="239.0" mnemonicParsing="false" onAction="#removeFromTickets" style="-fx-background-color: teal;" text="Remove Ticket" textFill="GOLD" />
             <Label fx:id="errorLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="222.0" prefHeight="17.0" prefWidth="376.0" />
          </children>
       </AnchorPane>

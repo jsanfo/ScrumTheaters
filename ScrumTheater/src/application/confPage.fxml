@@ -7,36 +7,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ToolBar layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+      <ToolBar layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <items>
-            <Button mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" text="Home">
+            <Button mnemonicParsing="false" onAction="#homeClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Home" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" text="Catalog">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#catalogClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Catalog" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" text="Tickets">
+            <Button layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#ticketsClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Tickets" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="192.0" layoutY="10.0" mnemonicParsing="false" onAction="#accountClicked" prefHeight="35.0" prefWidth="87.0" text="Account">
+            <Button layoutX="192.0" layoutY="10.0" mnemonicParsing="false" onAction="#accountClicked" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: teal;" text="Account" textFill="GOLD">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
          </items>
       </ToolBar>
-      <AnchorPane layoutX="383.0" layoutY="24.0" minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="227.0" style="-fx-background-color: lightgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="383.0" layoutY="24.0" minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="227.0" style="-fx-background-color: teal;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="41.0" layoutY="54.0" onMouseClicked="#titleClicked" text="SCRUM Theaters" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-49.0" AnchorPane.topAnchor="10.0">
+            <Label layoutX="41.0" layoutY="54.0" onMouseClicked="#titleClicked" prefHeight="54.0" prefWidth="591.0" text="SCRUM Theaters" textFill="GOLD" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="36.0" />
                </font>
