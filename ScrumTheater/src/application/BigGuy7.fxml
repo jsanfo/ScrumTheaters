@@ -33,7 +33,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="238.0" layoutY="330.0" text="Runtime: 130 minutes" textAlignment="CENTER" textFill="#90591b" wrapText="true">
+      <Label layoutX="238.0" layoutY="330.0" text="Runtime: 80 minutes" textAlignment="CENTER" textFill="#90591b" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
