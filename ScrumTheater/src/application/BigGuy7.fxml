@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.movieController">
    <children>
-      <ImageView fitHeight="473.0" fitWidth="1058.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="473.0" fitWidth="599.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/images/descriptionBackGrounds/bigGuy7_BG.jpg" />
          </image>
