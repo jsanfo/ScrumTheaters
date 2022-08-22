@@ -42,6 +42,8 @@ public class showTimeController extends movieController implements Initializable
     private Label errorLbl;
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 17, 2022
      * Initializes the showtime page by filling the choice box for each time.
      * @param url
      * @param resourceBundle
@@ -57,6 +59,8 @@ public class showTimeController extends movieController implements Initializable
     }
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 17, 2022
      * Initializes the movie name label with the string passed in.
      * @param movName
      */
@@ -66,6 +70,8 @@ public class showTimeController extends movieController implements Initializable
     }
 
     /**
+     * Author(s): Miranda Medina, Nova ("James") Sanford
+     * Date: August 17, 2022
      * If there are selection(s), take User to the cart with those selections added to it.
      * @param event
      */
@@ -104,6 +110,8 @@ public class showTimeController extends movieController implements Initializable
     }
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 17, 2022
      * Take the user to the cart.
      * @param event
      * @throws IOException
@@ -117,6 +125,8 @@ public class showTimeController extends movieController implements Initializable
     }
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 17, 2022
      * Similar to getMovieList, gets amounts to add to the choice boxes in the Show Times page.
      * @return List of amounts of tickets you can buy
      */

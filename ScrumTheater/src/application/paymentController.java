@@ -21,6 +21,8 @@ public class paymentController extends ticketController {
     private Label cardLabel = new Label();
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 18, 2022
      * Initializes by setting the labels with username and card number respectively.
      * @param url
      * @param resourceBundle
@@ -32,6 +34,8 @@ public class paymentController extends ticketController {
     }
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 18, 2022
      * Moves scene to the confirmation page.
      * @param event
      * @throws IOException
@@ -49,6 +53,8 @@ public class paymentController extends ticketController {
     }
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 18, 2022
      * Sets the Labels for the username and card number.
      */
     private void setLabels()
@@ -58,6 +64,8 @@ public class paymentController extends ticketController {
     }
 
     /**
+     * Author(s): Miranda Medina, Omar Marron
+     * Date: August 18, 2022
      * Censors the card number for all digits except the last 4, and returns it.
      * @param cardNum number to be censored
      * @return censored number.

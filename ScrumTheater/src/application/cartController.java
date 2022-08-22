@@ -20,6 +20,8 @@ public class cartController extends sceneController implements Initializable {
     private ListView<String> cartListView = new ListView<>();
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 15, 2022
      * Initializes the cartListView to show all items in current User's cart.
      * @param url
      * @param resourceBundle
@@ -30,6 +32,8 @@ public class cartController extends sceneController implements Initializable {
     }
 
     /**
+     * Author(s): Miranda Medina
+     * Date: August 15, 2022
      * Places tickets in the cart into the User's current ticket list.
      * 	Takes User to a confirmation page.
      * @param event
@@ -40,6 +44,8 @@ public class cartController extends sceneController implements Initializable {
     }
 
     /**
+     * Author(s): Omar Marron
+     * Date: August 16, 2022
      * Removes ticket selected from the cart list.
      *  If nothing is selected, gives a warning message.
      * @param event
@@ -73,6 +79,8 @@ public class cartController extends sceneController implements Initializable {
     }
 
     /**
+     * Author(s): Omar Marron
+     * Date: August 16, 2022
      * Moves the scene to the payment screen page.
      * @param event
      * @throws IOException

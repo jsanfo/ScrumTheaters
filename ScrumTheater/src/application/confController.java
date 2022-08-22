@@ -13,6 +13,8 @@ public class confController extends paymentController{
     private ListView<String> confListView = new ListView<>();
 
     /**
+     * Author(s): Hunter Lakatta
+     * Date: August 16, 2022
      * Initializes the confirmation page's List View.
      * @param url
      * @param resourceBundle

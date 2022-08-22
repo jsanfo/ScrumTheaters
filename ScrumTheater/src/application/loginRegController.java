@@ -18,8 +18,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-import application.sceneController;
-
 public class loginRegController implements Initializable {
 
     //Treemap for Usernames & Passwords
@@ -43,6 +41,8 @@ public class loginRegController implements Initializable {
     //Initialization//
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Initializes the userpasses from the account files.
      * @param url
      * @param resourceBundle
@@ -60,6 +60,8 @@ public class loginRegController implements Initializable {
     //Buttons CLicked//
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * When login button is clicked, open login page
      * @param event Button clicked
      * @throws IOException
@@ -89,6 +91,8 @@ public class loginRegController implements Initializable {
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Continues program to the Registration Page.
      * @param event
      * @throws IOException
@@ -98,6 +102,8 @@ public class loginRegController implements Initializable {
         continueTo(event, "registrationPage.fxml");
     }
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Registers the user's new account with the parameters provided in the
      * 	text field and password fields.
      * @param event
@@ -154,6 +160,8 @@ public class loginRegController implements Initializable {
     //Helper Methods//
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Checks if the user is already registered.
      * 	If they are, return true;
      * @param username To check across the Treemap of Usernames and Passwords.
@@ -174,6 +182,8 @@ public class loginRegController implements Initializable {
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Checks if the password passed in is part of the key, value pair with the username.
      * @param username The key of the userPasses Treemap
      * @param password The value of the userPasses Treemap
@@ -192,6 +202,8 @@ public class loginRegController implements Initializable {
         return isCorrect;
     }
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Gets the username and password from every account file
      * 	and puts it in the userPasses Treemap as a key, value pair
      * @throws FileNotFoundException
@@ -213,6 +225,8 @@ public class loginRegController implements Initializable {
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Continues to Home Page, calls sceneController's initdata function and passes the data.
      * @param event
      * @throws IOException
@@ -229,6 +243,8 @@ public class loginRegController implements Initializable {
         stage.show();
     }
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Sets the scene to the .fxml file whose name was passed in.
      * 	Easy implementation for a button to "Go To" a page.
      * @param event

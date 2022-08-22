@@ -27,6 +27,8 @@ public class User
     // Constructors //
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Constructor for the User class
      * @param UserName username given to the User at construction
      * @param Pass password given to the User at construction
@@ -39,6 +41,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Constructor for the User Class
      *  Used to read a User file from the resources > text > accountFiles file.
      * @param f Account File to be read and assigned to the private variables.
@@ -50,6 +54,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Creates a File in resources.text.accountFiles folder for this User instance.
      *  Writes the username and password on the first and second line of the file created.
      * @throws IOException
@@ -73,6 +79,10 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
+     * Author(s):
+     * Date:
      * @return String to the path of the User's account file.
      */
     public String getFilePath()
@@ -81,6 +91,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Overwrites the old line found in the User's account file.
      * @param oldLine Old line to be found
      * @param newLine New line to replace the old
@@ -103,6 +115,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Gives the User's account file a new name
      * @param newName new name for the file
      */
@@ -118,6 +132,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Reads through the account file and parses the username, password, and card number out.
      * @param f File to read through
      * @throws FileNotFoundException
@@ -138,6 +154,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * @return Username of the User
      */
     public String getUserName()
@@ -146,6 +164,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * @return Card Number of the User
      */
     public String getCardNum()
@@ -154,6 +174,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * @return The cart of the User
      */
     public List<String> getCart()
@@ -162,6 +184,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Edits the cart list to be more readable on the application,
      *  and then returns it.
      * @return list of readable cart tickets
@@ -181,6 +205,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Edits the purchased tickets to be more readable, and then returns it.
      * @return list of readable movie tickets.
      * @throws FileNotFoundException
@@ -205,6 +231,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Removes item from cart list, and removes from file.
      * @param item - item to remove.
      * @throws IOException
@@ -215,6 +243,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Removes the item from current ticket list, and then the file.
      * @param item item to remove
      * @throws IOException
@@ -225,6 +255,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * adds a line a the end of the account file.
      * @param line line to add
      * @throws IOException
@@ -242,6 +274,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * removes the line from the lines list.  writes the lines list to the end of the file.
      * @param line line to remove.
      * @throws IOException
@@ -264,6 +298,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * adds ticket to currentTickets, then adds ticket to the end of the file.
      * @param ticket
      * @throws IOException
@@ -274,6 +310,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Overwrites the username line in the file, renames the file to the new name, changes the username variable to new.
      * @param newUserName New username to set to
      * @throws IOException
@@ -286,6 +324,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Overwrites password line, sets password variable to new password.
      * @param newPassword New password to set to
      * @throws IOException
@@ -297,6 +337,8 @@ public class User
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: July 27, 2022
      * Overwrites Card Number line, sets cardNum variable to new one.
      * @param newCardNum New card number to set to
      * @throws IOException
@@ -308,6 +350,8 @@ public class User
     }
 
     /**
+     * Author(s): Miranda Medina
+     * Date: July 27, 2022
      * Adds items in list passed in to cart List
      * @param selections List of Strings passed in
      */

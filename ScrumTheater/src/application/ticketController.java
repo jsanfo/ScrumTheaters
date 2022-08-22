@@ -26,6 +26,8 @@ public class ticketController extends cartController implements Initializable {
     private Label errorLbl = new Label();
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 18, 2022
      * Initializes the ticket page by filling the list view of the tickets that have been purchased.
      * @param url
      * @param resourceBundle
@@ -41,6 +43,8 @@ public class ticketController extends cartController implements Initializable {
     }
 
     /**
+     * Author(s): Nova ("James") Sanford, Omar Marron
+     * Date: August 18, 2022
      * When remove is clicked:
      *  If there is no selection, will set a warning message
      *  If there is a selection clicked, clears any previous warning message and moves scene to

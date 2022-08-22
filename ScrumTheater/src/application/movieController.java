@@ -3,16 +3,12 @@ package application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class movieController extends sceneController {
     //Movie's name.  The movie name is derived from this object and passed to the showtimes page.
@@ -20,6 +16,8 @@ public class movieController extends sceneController {
     protected Text movNameTxt = new Text();
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Takes User to showtimes of this movie.
      * @param event
      * @throws IOException
@@ -29,6 +27,8 @@ public class movieController extends sceneController {
     }
 
     /**
+     * Author(s): Nova ("James") Sanford
+     * Date: August 16, 2022
      * Moves scene to showtime page.
      * @param event
      * @throws IOException

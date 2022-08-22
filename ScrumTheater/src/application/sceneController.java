@@ -54,6 +54,8 @@ public class sceneController implements Initializable
 	// Initialization //
 
 	/**
+	 * Author(s): Nova ("James") Sanford
+	 * Date: July 27, 2022
 	 * Initializes the list view for the catalog.
 	 * @param url
 	 * @param resourceBundle
@@ -72,6 +74,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford
+	 * Date: August 16, 2022
 	 * Initializes data after User logs in
 	 * @param current User instance for the current user.
 	 * @param UP Treemap for the usernames/passwords
@@ -86,6 +90,8 @@ public class sceneController implements Initializable
 	// Event Methods //
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 27, 2022
 	 * When the title is clicked, opens the home page.
 	 * @param event Mouse clicked on the label
 	 * @throws IOException
@@ -100,6 +106,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 27, 2022
 	 * When home button is clicked, opens the home page.
 	 * @param event Button clicked
 	 * @throws IOException
@@ -110,6 +118,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford
+	 * Date: July 27, 2022
 	 * When catalog button is clicked, opens the catalog page
 	 * @param event Button clicked
 	 * @throws IOException
@@ -120,6 +130,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 29, 2022
 	 * When tickets button is clicked, opens the tickets page.
 	 * @param event Button clicked
 	 * @throws IOException
@@ -136,6 +148,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 29, 2022
 	 * When account button is clicked, opens the Account page
 	 * @param event Button clicked
 	 * @throws IOException
@@ -146,6 +160,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford
+	 * Date: July 29, 2022
 	 * 	Allows User to see their username,
 	 * 	Amount of chars in their password,
 	 * 	Amount of chars in their Card Number
@@ -165,6 +181,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 29, 2022
 	 * Allows user to edit their username, password, and Card Number
 	 * @param event
 	 */
@@ -182,6 +200,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford
+	 * Date: July 29, 2022
 	 * Checks that requirements are met, if not displays why in a label
 	 * Sets username, password, and card number found in text and pass fields to the User's
 	 * 	matching variables.
@@ -233,6 +253,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: August 15, 2022
 	 * Sets the movie that was selected as the choice.  Does nothing if no movie was
 	 * selected
 	 * @param event
@@ -264,6 +286,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s):
+	 * Date:
 	 * Takes the user to Atlantic Rim's description page.
 	 * @param event
 	 * @throws IOException
@@ -273,6 +297,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 31, 2022
 	 * Takes the user to Big Guy 7's description page.
 	 * @param event
 	 * @throws IOException
@@ -282,6 +308,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 31, 2022
 	 * Takes the user to Finding Fish's description page.
 	 * @param event
 	 * @throws IOException
@@ -291,6 +319,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 31, 2022
 	 * Takes the user to The Quick and The Angry's description page.
 	 * @param event
 	 * @throws IOException
@@ -300,6 +330,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 31, 2022
 	 * Takes the user to Squidnado's description page.
 	 * @param event
 	 * @throws IOException
@@ -309,6 +341,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 31, 2022
 	 * Takes the user to The Neptunian's description page.
 	 * @param event
 	 * @throws IOException
@@ -318,6 +352,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 31, 2022
 	 * Takes the user to The Revengers' description page.
 	 * @param event
 	 * @throws IOException
@@ -330,6 +366,8 @@ public class sceneController implements Initializable
 	// Helper Methods //
 
 	/**
+	 * Author(s): Nova ("James") Sanford
+	 * Date: July 29, 2022
 	 * Sets the scene to the .fxml file whose name was passed in.
 	 * 	Easy implementation for a button to "Go To" a page.
 	 * @param event
@@ -346,6 +384,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford
+	 * Date: August 8, 2022
 	 * Moves scene to the name of the page's file passed in.
 	 * @param event
 	 * @param fileName name of the page's file.
@@ -360,6 +400,8 @@ public class sceneController implements Initializable
 	}
 
 	/**
+	 * Author(s): Nova ("James") Sanford, Miranda Medina
+	 * Date: July 29, 2022
 	 * Gets the movie list information from movieNames.txt.
 	 * 	Used in initialize method to initialize the catalog list.
 	 * @return A list of movie names
@@ -384,6 +426,4 @@ public class sceneController implements Initializable
 
 		return movieList;
 	}
-
-
 }
